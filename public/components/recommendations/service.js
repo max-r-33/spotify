@@ -55,12 +55,17 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
             url: 'https://api.spotify.com/v1/search?q=' + encodeURI(searchTerm) + "&type=" + type
         }).then(function(result) {
             console.log(result);
+
             var info = {
                 id: result.data[type + 's'].items[0].id,
                 uri: "https://embed.spotify.com/?uri=" + result.data[type + 's'].items[0].uri,
-                name: result.data[type + 's'].items[0].name,
                 popularity: result.data[type + 's'].items[0].popularity,
             };
+            if (result.data[type + 's'].items[0].name.length > 26) {
+                info.name = shorten(result.data[type + 's'].items[0].name);
+            } else {
+                info.name = result.data[type + 's'].items[0].name;
+            }
             if (type === 'artist') {
                 info.image = result.data.artists.items[0].images[0].url;
             } else {
@@ -118,5 +123,16 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
             method: 'PUT',
             url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
         });
+    };
+
+    var shorten = function(str) {
+        var arr = str.split("");
+        console.log(arr);
+        var res = [];
+        for (var i = 0; i < 24; i++) {
+            res.push(arr[i]);
+        }
+        res.push('...');
+        return res.join('');
     };
 });

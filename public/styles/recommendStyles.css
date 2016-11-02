@@ -48,16 +48,22 @@
     border-radius: 5px;
     color: #191414;
     margin: 20px;
-    padding: 15px;
+    padding-top:15px;
     width: 95vw;
     max-width: 400px;
+    height:600px;
+    text-align: center;
 }
 
 #recommend .info-card .card-title {
     font-size: 29px;
-    text-align: left;
     font-weight: 600;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+#recommend .info-card .card-artist {
+    font-size:25px;
+    margin-bottom:10px;
 }
 
 #recommend #description {
