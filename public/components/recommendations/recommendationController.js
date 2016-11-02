@@ -1,7 +1,7 @@
 var client_id = '9307698323d44b158135c48936a25dbf';
 var redirect_uri = encodeURIComponent('http://localhost:8080/afterAuth.html');
 
-angular.module('spotifyApp').controller('searchController', function($scope, spotifyService, loginService) {
+angular.module('spotifyApp').controller('recommendationController', function($scope, spotifyService, loginService) {
 
     //gets token from saved coookie
     $scope.getToken = function() {

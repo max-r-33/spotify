@@ -4,8 +4,8 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
         //search state
         $stateProvider.state('search', {
                 url: '/search',
-                templateUrl: '/components/search/searchTmpl.html',
-                controller: 'searchController'
+                templateUrl: '/components/recommendations/recommendTmpl.html',
+                controller: 'recommendationController'
             })
             //login state
             .state('login', {
