@@ -11,9 +11,13 @@ angular.module('spotifyApp').service('loginService', function($cookies, $http) {
         });
     };
 
-    //save token to a cookie
+    //save token to a cookie that expires in 1hr
     this.setToken = function(token){
-      $cookies.put('token', token);
+      var now = new Date();
+      var time = now.getTime();
+      time += 3600 * 1000;
+      now.setTime(time);
+      $cookies.put('token', token, {'expires': now});
       console.log(token);
       this.token = token;
       isLoggedIn = true;
