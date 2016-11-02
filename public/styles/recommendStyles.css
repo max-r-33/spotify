@@ -1,52 +1,95 @@
-#recommend{
-  text-align: center;
-}
-#recommend input{
-  background-color: #f6f6f6;
-  border: none;
-  font-family: "Avenir";
-  font-size:29px;
-  padding:10px;
-  border-radius:3px;
-  width:90vw;
-  margin:1vh 2vw;
-}
-#recommend #description{
-  padding:20px;
-}
-#recommend h1{
-  font-size:11vw;
-}
-#recommend p{
-  font-size:22px;
-  font-weight: 100;
-  line-height: normal;
-  max-width:400px;
-  margin:0 auto;
-  transition: all .05s ease-in-out;
-}
-#recommend input:focus{
-  outline-color: #1DB954;
-  outline-width: 7px;
+#recommend {
+    text-align: center;
 }
 
-@media(min-width:700px){
-  #recommend h1{
-    font-size:70px;
-  }
+#recommend input {
+    background-color: #f6f6f6;
+    border: none;
+    font-family: "Avenir";
+    font-size: 29px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 90vw;
+    margin: 1vh 2vw;
 }
-@media(min-width:1000px){
-  #recommend .input-container{
+
+#recommend h1 {
+    margin-top: 30px;
+    font-size: 11vw;
+}
+
+#recommend p {
+    font-size: 22px;
+    font-weight: 100;
+    line-height: normal;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: all .05s ease-in-out;
+}
+
+#recommend input:focus {
+    outline-color: #1DB954;
+    outline-width: 8px;
+}
+
+#recommend .song-grid {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin:0 auto;
-  }
-  #recommend .button{
-    font-size:33px;
-  }
-  #recommend .button:hover{
-    font-size:34px;
-  }
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#recommend .info-card {
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    color: #191414;
+    margin: 20px;
+    padding: 15px;
+    width: 95vw;
+    max-width: 400px;
+    display: inline-block;
+}
+
+#recommend .info-card .card-title {
+    font-size: 29px;
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#recommend img {
+    display: inline;
+}
+
+#recommend #description {
+    padding: 20px;
+}
+
+#recommend iframe {
+    display: none;
+}
+
+@media(min-width:700px) {
+    #recommend h1 {
+        font-size: 70px;
+    }
+}
+
+@media(min-width:1000px) {
+    #recommend iframe {
+        display: inline;
+    }
+    #recommend .input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    #recommend .button {
+        font-size: 33px;
+    }
+    #recommend .button:hover {
+        font-size: 34px;
+    }
 }

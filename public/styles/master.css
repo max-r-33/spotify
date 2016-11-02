@@ -38,3 +38,7 @@ input{
   font-size:31px;
   cursor: pointer;
 }
+.button:active{
+  background-color: rgb(33,147,71);
+  color:rgb(188,199,192)
+}
