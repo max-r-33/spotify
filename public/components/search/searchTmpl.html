@@ -1,0 +1,15 @@
+<input type="text" name="name" value="" placeholder="Artist" ng-model='artistName'>
+<input type="text" name="name" value="" placeholder="Song" ng-model='songName'>
+<input type="text" name="name" value="" placeholder="Genre" ng-model='genreName'>
+<button ng-click='getRecommendations(songName, artistName, genreName)'>Get info</button>
+<div ng-click='authorize()'>Authorize Spotify</div>
+<div ng-repeat='rec in recommendations'>
+    <p>{{ rec.name }}</p>
+    <p>{{ rec.artist}}</p>
+    <img ng-src='{{rec.albumImg}}' width='100' height='100'>
+    <p>Popularity: {{ rec.popularity}}</p>
+    <a ng-href='{{rec.preview}}'>Preview</a>
+    <a ng-click='saveSong(rec.id)'>Save</a>
+    <iframe ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    <hr>
+</div>
