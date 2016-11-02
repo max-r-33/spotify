@@ -9,15 +9,17 @@
         <input type="text" name="genre" value="" placeholder="Genre" ng-model='genreName'>
     </div>
     <h1><a class='button' ng-click='getRecommendations(songName, artistName, genreName)'>Get Recommendations</a></h1>
-    <div ng-repeat='rec in recommendations' class='song-grid'>
-        <div class='info-card'>
-            <p class='card-title'>{{ rec.name }}</p>
-            <p>{{ rec.artist}}</p>
-            <img ng-src='{{rec.albumImg}}' width='200' height='200'>
-            <p>Popularity: {{ rec.popularity}}</p>
-            <a ng-href='{{rec.preview}}'>Preview</a>
-            <a ng-click='saveSong(rec.id)'>Save</a>
-            <iframe ng-class='' ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    <div class="song-grid-container">
+        <div ng-repeat='rec in recommendations' class='song-grid'>
+            <div class='info-card'>
+                <p class='card-title'>{{ rec.name }}</p>
+                <p>{{ rec.artist}}</p>
+                <img ng-src='{{rec.albumImg}}' width='200' height='200'>
+                <p>Popularity: {{ rec.popularity}}</p>
+                <a ng-href='{{rec.preview}}'>Preview</a>
+                <a ng-click='saveSong(rec.id)'>Save</a>
+                <iframe ng-class='' ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+            </div>
         </div>
     </div>
 </div>
