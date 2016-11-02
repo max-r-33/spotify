@@ -1,4 +1,4 @@
-angular.module('spotifyApp').controller('authController', function($scope, spotifyService, $cookies) {
+angular.module('spotifyApp').controller('authController', function($scope, loginService, $cookies) {
 
     //method to extract token from redirect url
     $scope.getToken = function() {
@@ -13,11 +13,11 @@ angular.module('spotifyApp').controller('authController', function($scope, spoti
     $scope.getToken();
 
     //sets token
-    spotifyService.setToken($scope.token);
+    loginService.setToken($scope.token);
 
     //redirects home after 1s
     setTimeout(function() {
-        window.location = 'http://localhost:8080/';
+        window.location = 'http://localhost:8080/#/search';
     }, 1000);
 
 });

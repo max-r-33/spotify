@@ -6,4 +6,6 @@ angular.module('spotifyApp').controller('loginController', function($scope, logi
             window.location = "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify&response_type=token";
         });
     };
+    loginService.getToken();
+    $scope.isLoggedIn = loginService.isLoggedIn;
 });

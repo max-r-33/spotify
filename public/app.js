@@ -12,7 +12,8 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 url: '/login',
                 templateUrl: '/components/login/login.html',
                 controller: 'loginController'
-            });
+        });
+        $urlRouterProvider.otherwise('/');
 
     }).config(['$cookiesProvider', function($cookiesProvider) {
         //makes token accessible for the whole app

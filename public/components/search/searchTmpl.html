@@ -2,7 +2,6 @@
 <input type="text" name="name" value="" placeholder="Song" ng-model='songName'>
 <input type="text" name="name" value="" placeholder="Genre" ng-model='genreName'>
 <button ng-click='getRecommendations(songName, artistName, genreName)'>Get info</button>
-<div ng-click='authorize()'>Authorize Spotify</div>
 <div ng-repeat='rec in recommendations'>
     <p>{{ rec.name }}</p>
     <p>{{ rec.artist}}</p>

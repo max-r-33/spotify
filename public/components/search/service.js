@@ -1,11 +1,12 @@
 var client_id = '9307698323d44b158135c48936a25dbf';
 var redirect_uri = encodeURIComponent('http://localhost:8080/afterAuth.html');
-angular.module('spotifyApp').service('spotifyService', function($http, $q, $cookies) {
+
+angular.module('spotifyApp').service('spotifyService', function($http, $q, $cookies, loginService) {
     //looks up ids of provided elements and
     //gets recommendations accordingly
     var token;
     this.getRecs = function(artist, song, genre) {
-        token = this.getToken();
+        token = loginService.getToken();
         console.log(artist + " " + song + " " + genre);
         var songInfo;
         var artistInfo;
@@ -53,29 +54,29 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
             method: 'GET',
             url: 'https://api.spotify.com/v1/search?q=' + encodeURI(searchTerm) + "&type=" + type
         }).then(function(result) {
-          console.log(result);
-            var info =   {
+            console.log(result);
+            var info = {
                 id: result.data[type + 's'].items[0].id,
-                uri: "https://embed.spotify.com/?uri=" + result.data[type+ 's'].items[0].uri,
+                uri: "https://embed.spotify.com/?uri=" + result.data[type + 's'].items[0].uri,
                 name: result.data[type + 's'].items[0].name,
                 popularity: result.data[type + 's'].items[0].popularity,
             };
-            if(type === 'artist'){
+            if (type === 'artist') {
                 info.image = result.data.artists.items[0].images[0].url;
-            }else{
+            } else {
                 info.albumImg = result.data.tracks.items[0].album.images[0].url;
                 info.preview = result.data.tracks.items[0].preview_url;
                 info.artistInfo = {
-                  name: result.data.tracks.items[0].artists[0].name,
-                  id: result.data.tracks.items[0].artists[0].id
+                    name: result.data.tracks.items[0].artists[0].name,
+                    id: result.data.tracks.items[0].artists[0].id
                 };
-                getInfo(info.id).then(function(result){
-                  info.acoutsticness = result.acoutsticness;
-                  info.danceability = result.danceability;
-                  info.energy = result.energy;
-                  info.instrumentalness = result.instrumentalness;
-                  info.key = result.key;
-                  info.tempo = result.tempo;
+                getInfo(info.id).then(function(result) {
+                    info.acoutsticness = result.acoutsticness;
+                    info.danceability = result.danceability;
+                    info.energy = result.energy;
+                    info.instrumentalness = result.instrumentalness;
+                    info.key = result.key;
+                    info.tempo = result.tempo;
                 });
             }
             console.log(info);
@@ -108,37 +109,14 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
         return defer.promise;
     };
 
-    //requests auth token
-    this.authorize = function(){
-      return $http({
-        method:'GET',
-        url:"https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read&response_type=token"
-      });
-    };
-
     //saves track to your library
-    this.saveTrack = function(id){
-      return $http({
-        headers:{
-          'Authorization': 'Bearer ' + token
-        },
-        method:'PUT',
-        url:'https://api.spotify.com/v1/me/tracks?ids=' + id
-      });
-    };
-
-    //save token to a cookie
-    this.setToken = function(token){
-      $cookies.put('token', token);
-      console.log(token);
-      this.token = token;
-
-    };
-
-    //gets token from a cookie
-    this.getToken = function(){
-      token = $cookies.get('token');
-      console.log(token);
-      return token;
+    this.saveTrack = function(id) {
+        return $http({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            method: 'PUT',
+            url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
+        });
     };
 });
