@@ -6,7 +6,11 @@ angular.module('spotifyApp').controller('recommendationController', function($sc
     //gets token from saved coookie
     $scope.getToken = function() {
         $scope.token = loginService.getToken();
-        console.log($scope.token);
+
+        //redirects if user not logged in
+        if(!$scope.token){
+          window.location='/';
+        }
     };
 
     //gets saved token when page is loaded

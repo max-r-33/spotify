@@ -1,0 +1,52 @@
+#recommend{
+  text-align: center;
+}
+#recommend input{
+  background-color: #f6f6f6;
+  border: none;
+  font-family: "Avenir";
+  font-size:29px;
+  padding:10px;
+  border-radius:3px;
+  width:90vw;
+  margin:1vh 2vw;
+}
+#recommend #description{
+  padding:20px;
+}
+#recommend h1{
+  font-size:11vw;
+}
+#recommend p{
+  font-size:22px;
+  font-weight: 100;
+  line-height: normal;
+  max-width:400px;
+  margin:0 auto;
+  transition: all .05s ease-in-out;
+}
+#recommend input:focus{
+  outline-color: #1DB954;
+  outline-width: 7px;
+}
+
+@media(min-width:700px){
+  #recommend h1{
+    font-size:70px;
+  }
+}
+@media(min-width:1000px){
+  #recommend .input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin:0 auto;
+  }
+  #recommend .button{
+    font-size:33px;
+  }
+  #recommend .button:hover{
+    font-size:34px;
+  }
+}
