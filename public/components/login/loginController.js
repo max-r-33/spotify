@@ -8,4 +8,7 @@ angular.module('spotifyApp').controller('loginController', function($scope, logi
     };
     loginService.getToken();
     $scope.isLoggedIn = loginService.isLoggedIn;
+    if($scope.isLoggedIn){
+      window.location = "http://localhost:8080/#/search";
+    }
 });

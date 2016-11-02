@@ -9,7 +9,7 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
             })
             //login state
             .state('login', {
-                url: '/login',
+                url: '/',
                 templateUrl: '/components/login/login.html',
                 controller: 'loginController'
         });
