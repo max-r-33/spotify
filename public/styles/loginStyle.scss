@@ -1,72 +1,71 @@
 @import 'master';
+#login {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 
-#login{
-  position: relative;
-  height:100vh;
-  width:100vw;
-}
-#login #login-button{
-  font-family:Avenir;
-  font-weight:900;
-  font-size:30px;
-  background-color: $spotifyGreen;
-  border-radius:90px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top:10px;
-  padding-bottom: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 350px;
-  transform: translate(-50%, -20%);
-  text-align: center;
-  cursor: pointer;
-}
-#login #login-button:hover{
-  background-color: $spotifyGreenHover;
-}
-#login #login-button:active{
-  background-color: $spotifyGreenActive;
-  color:$spotifyTextActive;
-}
-#login #text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 350px;
-  transform: translate(-50%, -150%);
-  line-height: 37px;
-}
+    #login-button {
+        font-family: Avenir;
+        font-weight: 900;
+        font-size: 30px;
+        background-color: $spotifyGreen;
+        border-radius: 90px;
+        padding: 10px 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 350px;
+        transform: translate(-50%, -20%);
+        text-align: center;
+        cursor: pointer;
+    }
 
-@media(min-width:700px){
-  #login #login-button{
-    min-width: 650px;
-    font-size:50px;
-  }
-  #login #text{
-    font-size:29px;
-    font-weight: 600;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 350px;
-    transform: translate(-50%, -150%);
-    line-height: 37px;
-  }
-}
+    #login-button:hover {
+        background-color: $spotifyGreenHover;
+    }
 
-@media(min-width:1300px){
-  #login #text{
-    font-size:29px;
-    font-weight: 600;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 350px;
-    transform: translate(-50%, -220%);
-    line-height: 37px;
-  }
+    #login-button:active {
+        background-color: $spotifyGreenActive;
+        color: $spotifyTextActive;
+    }
+
+    #text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 350px;
+        transform: translate(-50%, -150%);
+        line-height: 37px;
+    }
+}
+@media(min-width:700px) {
+    #login #login-button {
+        min-width: 650px;
+        font-size: 50px;
+    }
+
+    #login #text {
+        font-size: 29px;
+        font-weight: 600;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 350px;
+        transform: translate(-50%, -150%);
+        line-height: 37px;
+    }
+}
+@media(min-width:1300px) {
+    #login #text {
+        font-size: 29px;
+        font-weight: 600;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 350px;
+        transform: translate(-50%, -220%);
+        line-height: 37px;
+    }
 }

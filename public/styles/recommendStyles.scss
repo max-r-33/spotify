@@ -13,130 +13,125 @@
         width: 90vw;
         margin: 1vh 2vw;
     }
+
+    img {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        margin-top: 30px;
+        font-size: 11vw;
+    }
+
+    p {
+        font-size: 22px;
+        font-weight: 100;
+        line-height: normal;
+        max-width: 400px;
+        margin: 0 auto;
+        transition: all 0.05s ease-in-out;
+    }
+
+    input:focus {
+        outline-color: $spotifyGreen;
+        outline-width: 8px;
+    }
+
+    .button {
+        margin-bottom: 50px;
+    }
+
+    .button-container {
+        height: 100px;
+    }
+
+    .song-grid {}
+
+    .song-grid-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .fa {}
+
+    .info-card {
+        background-color: $spotifyWhite;
+        border-radius: 5px;
+        color: $spotifyBlack;
+        margin: 20px;
+        padding-top: 60px;
+        width: 95vw;
+        max-width: 400px;
+        height: 600px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .save {
+        font-weight: lighter;
+        font-size: 17px;
+        text-align: center;
+        border-radius: 90px;
+        background-color: $spotifyBlack;
+        cursor: pointer;
+        margin-top: 30px;
+        padding: 10px 80px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        border: 4px double $spotifyWhite;
+        color: $spotifyWhite;
+        text-transform: uppercase;
+        transition: all 0.05s ease-in-out;
+    }
+
+    .save:hover {
+        font-size: 18px;
+    }
+
+    .saved {
+        color: $spotifyGreen;
+    }
+
+    .saved:hover {}
+
+    .save-container {
+        height: 20px;
+    }
+
+    .info-card .card-title {
+        font-size: 29px;
+        font-weight: 600;
+        padding-bottom: 8px;
+    }
+
+    .info-card .card-artist {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    #description {
+        padding: 20px;
+    }
+
+    iframe {
+        display: none;
+    }
 }
-
-#recommend img{
-  margin-bottom:50px;
-}
-#recommend h1 {
-    margin-top: 30px;
-    font-size: 11vw;
-}
-
-#recommend p {
-    font-size: 22px;
-    font-weight: 100;
-    line-height: normal;
-    max-width: 400px;
-    margin: 0 auto;
-    transition: all .05s ease-in-out;
-}
-
-#recommend input:focus {
-    outline-color: $spotifyGreen;
-    outline-width: 8px;
-}
-
-#recommend .button {
-    margin-bottom: 50px;
-}
-
-#recommend .button-container {
-    height: 100px;
-}
-
-#recommend .song-grid {}
-
-#recommend .song-grid-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-#recommend .fa {}
-
-#recommend .info-card {
-    background-color: $spotifyWhite;
-    border-radius: 5px;
-    color: $spotifyBlack;
-    margin: 20px;
-    padding-top: 60px;
-    width: 95vw;
-    max-width: 400px;
-    height: 600px;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#recommend .save {
-    font-weight: lighter;
-    font-size: 17px;
-    text-align: center;
-    border-radius: 90px;
-    background-color: $spotifyBlack;
-    cursor: pointer;
-    margin-top: 30px;
-    padding-left:80px;
-    padding-right:80px;
-    padding-top:10px;
-    padding-bottom:10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    border: 4px double $spotifyWhite;
-    color: $spotifyWhite;
-    text-transform: uppercase;
-    transition: all .05s ease-in-out;
-}
-
-#recommend .save:hover {
-    font-size: 18px;
-}
-
-#recommend .saved{
-    color:$spotifyGreen;
-}
-
-#recommend .saved:hover{
-
-}
-
-#recommend .save-container{
-    height:20px;
-}
-
-#recommend .info-card .card-title {
-    font-size: 29px;
-    font-weight: 600;
-    padding-bottom: 8px;
-}
-
-#recommend .info-card .card-artist {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-#recommend #description {
-    padding: 20px;
-}
-
-#recommend iframe {
-    display: none;
-}
-
 @media(min-width:700px) {
     #recommend h1 {
         font-size: 70px;
     }
 }
-
 @media(min-width:1100px) {
     #recommend iframe {
         display: inline;
-        margin-top:40px;
+        margin-top: 40px;
     }
+
     #recommend .input-container {
         display: flex;
         flex-direction: row;
@@ -144,12 +139,15 @@
         max-width: 1400px;
         margin: 0 auto;
     }
+
     #recommend .button {
         font-size: 33px;
     }
+
     #recommend .button:hover {
         font-size: 34px;
     }
+
     #recommend .info-card {
         padding-top: 50px;
         height: 700px;

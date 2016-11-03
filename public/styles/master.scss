@@ -1,54 +1,59 @@
-$spotifyGreen : #1DB954;
-$spotifyGreenHover : rgb(45,214,100);
-$spotifyGreenActive : rgb(33,147,71);
-$spotifyTextActive : rgb(188,199,192);
-$spotifyBlack : #191414;
-$spotifyWhite : #F6F6F6;
+$spotifyGreen: #1DB954;
+$spotifyGreenHover: rgb(45,214,100);
+$spotifyGreenActive: rgb(33,147,71);
+$spotifyTextActive: rgb(188,199,192);
+$spotifyBlack: #191414;
+$spotifyWhite: #F6F6F6;
 
-body{
-  background-color:$spotifyBlack;
-  color:$spotifyWhite;
-  min-width: 453px;
-  font-family:Avenir;
+body {
+    background-color: $spotifyBlack;
+    color: $spotifyWhite;
+    min-width: 453px;
+    font-family: Avenir;
 }
-h1{
-  font-size:70px;
-  font-weight: 500;
-  line-height: 60px;
-  margin:15px;
+
+h1 {
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 60px;
+    margin: 15px;
 }
-a{
+
+a {
     text-decoration: none;
 }
-p{
-  font-size:27px;
-  font-weight: 600;
-  text-align: center;
+
+p {
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
 }
-input{
-  color:$spotifyBlack;
+
+input {
+    color: $spotifyBlack;
 }
-.fa{
-  cursor: pointer;
+
+.fa {
+    cursor: pointer;
 }
-.button{
-  text-align: center;
-  font-size:30px;
-  font-weight: 900;
-  background-color: $spotifyGreen;
-  border-radius:90px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top:10px;
-  padding-bottom: 10px;
-  transition: all .05s ease-in-out;
+
+.button {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    background-color: $spotifyGreen;
+    border-radius: 90px;
+    padding: 10px 50px;
+    transition: all 0.05s ease-in-out;
 }
-.button:hover{
-  background-color: $spotifyGreenHover;
-  font-size:31px;
-  cursor: pointer;
+
+.button:hover {
+    background-color: $spotifyGreenHover;
+    font-size: 31px;
+    cursor: pointer;
 }
-.button:active{
-  background-color: $spotifyGreenActive;
-  color:$spotifyTextActive;
+
+.button:active {
+    background-color: $spotifyGreenActive;
+    color: $spotifyTextActive;
 }
