@@ -14,11 +14,11 @@
             <div class='info-card'>
                 <p class='card-title'>{{ rec.name }}</p>
                 <p class='card-artist'>{{ rec.artistInfo.name }}</p>
-                <img ng-src='{{rec.albumImg}}' width='300' height='300'>
-                <p>Popularity: {{ rec.popularity}}</p>
-                <a ng-href='{{rec.preview}}'>Preview</a>
-                <a ng-click='saveSong(rec.id)'>Save</a>
-                <iframe ng-class='' ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+                <img ng-src='{{rec.albumImg}}' width='300' height='300'><br/>
+                <!-- <p>Popularity: {{ rec.popularity}}</p> -->
+                <a class='save' ng-click='saveSong(rec.id)'>Save to Library</a>
+                <!-- <a ng-href='{{rec.preview}}'>Preview</a><br /> -->
+                <iframe ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             </div>
         </div>
     </div>

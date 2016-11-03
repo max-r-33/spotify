@@ -61,7 +61,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
                 uri: "https://embed.spotify.com/?uri=" + result.data[type + 's'].items[0].uri,
                 popularity: result.data[type + 's'].items[0].popularity,
             };
-            if (result.data[type + 's'].items[0].name.length > 26) {
+            if (result.data[type + 's'].items[0].name.length > 22) {
                 info.name = shorten(result.data[type + 's'].items[0].name);
             } else {
                 info.name = result.data[type + 's'].items[0].name;
@@ -129,7 +129,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
         var arr = str.split("");
         console.log(arr);
         var res = [];
-        for (var i = 0; i < 24; i++) {
+        for (var i = 0; i < 22; i++) {
             res.push(arr[i]);
         }
         res.push('...');
