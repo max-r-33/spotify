@@ -20,12 +20,12 @@ angular.module('spotifyApp').service('loginService', function($cookies, $http) {
       $cookies.put('token', token, {'expires': now});
       console.log(token);
       this.token = token;
-      isLoggedIn = true;
+      this.isLoggedIn = true;
     };
 
     //gets token from a cookie
     this.getToken = function() {
-        token = $cookies.get('token');
+        var token = $cookies.get('token');
         console.log(token);
         if(token){
           this.isLoggedIn = true;

@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html ng-app='spotifyApp'>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Spotify</title>
-    <link rel="stylesheet" href="/styles/reset.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/styles/master.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/styles/loginStyle.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/styles/recommendStyles.css" media="screen" title="no title">
+    <link rel="stylesheet" href="./dist/styles.css" media="screen" title="no title">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
-  </head>
-  <body>
-      <ui-view></ui-view>
-      <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js'></script>
-      <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js'></script>
-      <script type="text/javascript" src='https://code.angularjs.org/1.5.8/angular-cookies.js'></script>
-      <script type="text/javascript" src='./animations.js'></script>
-      <script type="text/javascript" src='./app.js'></script>
-      <script type="text/javascript" src='./components/recommendations/recommendationController.js'></script>
-      <script type="text/javascript" src='./components/recommendations/filter.js'></script>
-      <script type="text/javascript" src='./components/recommendations/service.js'></script>
-      <script type="text/javascript" src='./components/login/authController.js'></script>
-      <script type="text/javascript" src='./components/login/loginController.js'></script>
-      <script type="text/javascript" src='./components/login/loginService.js'></script>
-    </div>
-  </body>
+</head>
+
+<body>
+    <ui-view></ui-view>
+    <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js'></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js'></script>
+    <script type="text/javascript" src='https://code.angularjs.org/1.5.8/angular-cookies.js'></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='./dist/js/bundle.js'></script>
+</body>
+
 </html>

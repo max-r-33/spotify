@@ -1,0 +1,387 @@
+{"version":3,"file":"../reset.e4e8a912.css","sources":["reset.scss"],"sourcesContent":["html, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  box-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\nhtml, html a {\n    -webkit-font-smoothing: antialiased;\n    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);\n}\n"],"mappings":"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","names":[]}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, html a {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
+/*# sourceMappingURL=maps/reset.e4e8a912.css.map */
+
+{"version":3,"file":"../loginStyle.5e2f00a7.css","sources":["loginStyle.scss","master.scss"],"sourcesContent":["@import 'master';\n\n#login{\n  position: relative;\n  height:100vh;\n  width:100vw;\n}\n#login #login-button{\n  font-family:Avenir;\n  font-weight:900;\n  font-size:30px;\n  background-color: $spotifyGreen;\n  border-radius:90px;\n  padding-left: 50px;\n  padding-right: 50px;\n  padding-top:10px;\n  padding-bottom: 10px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  min-width: 350px;\n  transform: translate(-50%, -20%);\n  text-align: center;\n  cursor: pointer;\n}\n#login #login-button:hover{\n  background-color: $spotifyGreenHover;\n}\n#login #login-button:active{\n  background-color: $spotifyGreenActive;\n  color:$spotifyTextActive;\n}\n#login #text{\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  min-width: 350px;\n  transform: translate(-50%, -150%);\n  line-height: 37px;\n}\n\n@media(min-width:700px){\n  #login #login-button{\n    min-width: 650px;\n    font-size:50px;\n  }\n  #login #text{\n    font-size:29px;\n    font-weight: 600;\n    text-align: center;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    min-width: 350px;\n    transform: translate(-50%, -150%);\n    line-height: 37px;\n  }\n}\n\n@media(min-width:1300px){\n  #login #text{\n    font-size:29px;\n    font-weight: 600;\n    text-align: center;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    min-width: 350px;\n    transform: translate(-50%, -220%);\n    line-height: 37px;\n  }\n}\n","$spotifyGreen : #1DB954;\n$spotifyGreenHover : rgb(45,214,100);\n$spotifyGreenActive : rgb(33,147,71);\n$spotifyTextActive : rgb(188,199,192);\n$spotifyBlack : #191414;\n$spotifyWhite : #F6F6F6;\n\nbody{\n  background-color:$spotifyBlack;\n  color:$spotifyWhite;\n  min-width: 453px;\n  font-family:Avenir;\n}\nh1{\n  font-size:70px;\n  font-weight: 500;\n  line-height: 60px;\n  margin:15px;\n}\na{\n    text-decoration: none;\n}\np{\n  font-size:27px;\n  font-weight: 600;\n  text-align: center;\n}\ninput{\n  color:$spotifyBlack;\n}\n.fa{\n  cursor: pointer;\n}\n.button{\n  text-align: center;\n  font-size:30px;\n  font-weight: 900;\n  background-color: $spotifyGreen;\n  border-radius:90px;\n  padding-left: 50px;\n  padding-right: 50px;\n  padding-top:10px;\n  padding-bottom: 10px;\n  transition: all .05s ease-in-out;\n}\n.button:hover{\n  background-color: $spotifyGreenHover;\n  font-size:31px;\n  cursor: pointer;\n}\n.button:active{\n  background-color: $spotifyGreenActive;\n  color:$spotifyTextActive;\n}\n"],"mappings":"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","names":[]}
+body {
+  background-color: #191414;
+  color: #F6F6F6;
+  min-width: 453px;
+  font-family: Avenir; }
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 15px; }
+
+a {
+  text-decoration: none; }
+
+p {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center; }
+
+input {
+  color: #191414; }
+
+.fa {
+  cursor: pointer; }
+
+.button {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all .05s ease-in-out; }
+
+.button:hover {
+  background-color: #2dd664;
+  font-size: 31px;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+#login {
+  position: relative;
+  height: 100vh;
+  width: 100vw; }
+
+#login #login-button {
+  font-family: Avenir;
+  font-weight: 900;
+  font-size: 30px;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 350px;
+  transform: translate(-50%, -20%);
+  text-align: center;
+  cursor: pointer; }
+
+#login #login-button:hover {
+  background-color: #2dd664; }
+
+#login #login-button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+#login #text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 350px;
+  transform: translate(-50%, -150%);
+  line-height: 37px; }
+
+@media (min-width: 700px) {
+  #login #login-button {
+    min-width: 650px;
+    font-size: 50px; }
+  #login #text {
+    font-size: 29px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 350px;
+    transform: translate(-50%, -150%);
+    line-height: 37px; } }
+
+@media (min-width: 1300px) {
+  #login #text {
+    font-size: 29px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 350px;
+    transform: translate(-50%, -220%);
+    line-height: 37px; } }
+
+/*# sourceMappingURL=maps/loginStyle.5e2f00a7.css.map */
+
+{"version":3,"file":"../master.5038ef00.css","sources":["master.scss"],"sourcesContent":["$spotifyGreen : #1DB954;\n$spotifyGreenHover : rgb(45,214,100);\n$spotifyGreenActive : rgb(33,147,71);\n$spotifyTextActive : rgb(188,199,192);\n$spotifyBlack : #191414;\n$spotifyWhite : #F6F6F6;\n\nbody{\n  background-color:$spotifyBlack;\n  color:$spotifyWhite;\n  min-width: 453px;\n  font-family:Avenir;\n}\nh1{\n  font-size:70px;\n  font-weight: 500;\n  line-height: 60px;\n  margin:15px;\n}\na{\n    text-decoration: none;\n}\np{\n  font-size:27px;\n  font-weight: 600;\n  text-align: center;\n}\ninput{\n  color:$spotifyBlack;\n}\n.fa{\n  cursor: pointer;\n}\n.button{\n  text-align: center;\n  font-size:30px;\n  font-weight: 900;\n  background-color: $spotifyGreen;\n  border-radius:90px;\n  padding-left: 50px;\n  padding-right: 50px;\n  padding-top:10px;\n  padding-bottom: 10px;\n  transition: all .05s ease-in-out;\n}\n.button:hover{\n  background-color: $spotifyGreenHover;\n  font-size:31px;\n  cursor: pointer;\n}\n.button:active{\n  background-color: $spotifyGreenActive;\n  color:$spotifyTextActive;\n}\n"],"mappings":"AAOA,AAAA,IAAI,CAAA;EACF,gBAAgB,EAJF,OAAO;EAKrB,KAAK,EAJS,OAAO;EAKrB,SAAS,EAAE,KAAM;EACjB,WAAW,EAAC,MAAO,GACpB;;AACD,AAAA,EAAE,CAAA;EACA,SAAS,EAAC,IAAK;EACf,WAAW,EAAE,GAAI;EACjB,WAAW,EAAE,IAAK;EAClB,MAAM,EAAC,IAAK,GACb;;AACD,AAAA,CAAC,CAAA;EACG,eAAe,EAAE,IAAK,GACzB;;AACD,AAAA,CAAC,CAAA;EACC,SAAS,EAAC,IAAK;EACf,WAAW,EAAE,GAAI;EACjB,UAAU,EAAE,MAAO,GACpB;;AACD,AAAA,KAAK,CAAA;EACH,KAAK,EAxBS,OAAO,GAyBtB;;AACD,AAAA,GAAG,CAAA;EACD,MAAM,EAAE,OAAQ,GACjB;;AACD,AAAA,OAAO,CAAA;EACL,UAAU,EAAE,MAAO;EACnB,SAAS,EAAC,IAAK;EACf,WAAW,EAAE,GAAI;EACjB,gBAAgB,EArCF,OAAO;EAsCrB,aAAa,EAAC,IAAK;EACnB,YAAY,EAAE,IAAK;EACnB,aAAa,EAAE,IAAK;EACpB,WAAW,EAAC,IAAK;EACjB,cAAc,EAAE,IAAK;EACrB,UAAU,EAAE,oBAAqB,GAClC;;AACD,AAAO,OAAA,AAAA,MAAM,CAAA;EACX,gBAAgB,EA7CG,OAAG;EA8CtB,SAAS,EAAC,IAAK;EACf,MAAM,EAAE,OAAQ,GACjB;;AACD,AAAO,OAAA,AAAA,OAAO,CAAA;EACZ,gBAAgB,EAjDI,OAAG;EAkDvB,KAAK,EAjDc,OAAG,GAkDvB","names":[]}
+body {
+  background-color: #191414;
+  color: #F6F6F6;
+  min-width: 453px;
+  font-family: Avenir; }
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 15px; }
+
+a {
+  text-decoration: none; }
+
+p {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center; }
+
+input {
+  color: #191414; }
+
+.fa {
+  cursor: pointer; }
+
+.button {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all .05s ease-in-out; }
+
+.button:hover {
+  background-color: #2dd664;
+  font-size: 31px;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+/*# sourceMappingURL=maps/master.5038ef00.css.map */
+
+{"version":3,"file":"../recommendStyles.8c9d90b6.css","sources":["recommendStyles.scss","master.scss"],"sourcesContent":["@import 'master';\n\n#recommend {\n    text-align: center;\n\n    input {\n        background-color: $spotifyWhite;\n        border: none;\n        font-family: \"Avenir\";\n        font-size: 29px;\n        padding: 10px;\n        border-radius: 3px;\n        width: 90vw;\n        margin: 1vh 2vw;\n    }\n}\n\n#recommend img{\n  margin-bottom:50px;\n}\n#recommend h1 {\n    margin-top: 30px;\n    font-size: 11vw;\n}\n\n#recommend p {\n    font-size: 22px;\n    font-weight: 100;\n    line-height: normal;\n    max-width: 400px;\n    margin: 0 auto;\n    transition: all .05s ease-in-out;\n}\n\n#recommend input:focus {\n    outline-color: $spotifyGreen;\n    outline-width: 8px;\n}\n\n#recommend .button {\n    margin-bottom: 50px;\n}\n\n#recommend .button-container {\n    height: 100px;\n}\n\n#recommend .song-grid {}\n\n#recommend .song-grid-container {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    flex-wrap: wrap;\n}\n\n#recommend .fa {}\n\n#recommend .info-card {\n    background-color: $spotifyWhite;\n    border-radius: 5px;\n    color: $spotifyBlack;\n    margin: 20px;\n    padding-top: 60px;\n    width: 95vw;\n    max-width: 400px;\n    height: 600px;\n    text-align: center;\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n#recommend .save {\n    font-weight: lighter;\n    font-size: 17px;\n    text-align: center;\n    border-radius: 90px;\n    background-color: $spotifyBlack;\n    cursor: pointer;\n    margin-top: 30px;\n    padding-left:80px;\n    padding-right:80px;\n    padding-top:10px;\n    padding-bottom:10px;\n    margin-left: auto;\n    margin-right: auto;\n    margin-bottom: 30px;\n    border: 4px double $spotifyWhite;\n    color: $spotifyWhite;\n    text-transform: uppercase;\n    transition: all .05s ease-in-out;\n}\n\n#recommend .save:hover {\n    font-size: 18px;\n}\n\n#recommend .saved{\n    color:$spotifyGreen;\n}\n\n#recommend .saved:hover{\n\n}\n\n#recommend .save-container{\n    height:20px;\n}\n\n#recommend .info-card .card-title {\n    font-size: 29px;\n    font-weight: 600;\n    padding-bottom: 8px;\n}\n\n#recommend .info-card .card-artist {\n    font-size: 25px;\n    margin-bottom: 15px;\n}\n\n#recommend #description {\n    padding: 20px;\n}\n\n#recommend iframe {\n    display: none;\n}\n\n@media(min-width:700px) {\n    #recommend h1 {\n        font-size: 70px;\n    }\n}\n\n@media(min-width:1100px) {\n    #recommend iframe {\n        display: inline;\n        margin-top:40px;\n    }\n    #recommend .input-container {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-between;\n        max-width: 1400px;\n        margin: 0 auto;\n    }\n    #recommend .button {\n        font-size: 33px;\n    }\n    #recommend .button:hover {\n        font-size: 34px;\n    }\n    #recommend .info-card {\n        padding-top: 50px;\n        height: 700px;\n    }\n}\n","$spotifyGreen : #1DB954;\n$spotifyGreenHover : rgb(45,214,100);\n$spotifyGreenActive : rgb(33,147,71);\n$spotifyTextActive : rgb(188,199,192);\n$spotifyBlack : #191414;\n$spotifyWhite : #F6F6F6;\n\nbody{\n  background-color:$spotifyBlack;\n  color:$spotifyWhite;\n  min-width: 453px;\n  font-family:Avenir;\n}\nh1{\n  font-size:70px;\n  font-weight: 500;\n  line-height: 60px;\n  margin:15px;\n}\na{\n    text-decoration: none;\n}\np{\n  font-size:27px;\n  font-weight: 600;\n  text-align: center;\n}\ninput{\n  color:$spotifyBlack;\n}\n.fa{\n  cursor: pointer;\n}\n.button{\n  text-align: center;\n  font-size:30px;\n  font-weight: 900;\n  background-color: $spotifyGreen;\n  border-radius:90px;\n  padding-left: 50px;\n  padding-right: 50px;\n  padding-top:10px;\n  padding-bottom: 10px;\n  transition: all .05s ease-in-out;\n}\n.button:hover{\n  background-color: $spotifyGreenHover;\n  font-size:31px;\n  cursor: pointer;\n}\n.button:active{\n  background-color: $spotifyGreenActive;\n  color:$spotifyTextActive;\n}\n"],"mappings":"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","names":[]}
+body {
+  background-color: #191414;
+  color: #F6F6F6;
+  min-width: 453px;
+  font-family: Avenir; }
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 15px; }
+
+a {
+  text-decoration: none; }
+
+p {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center; }
+
+input {
+  color: #191414; }
+
+.fa {
+  cursor: pointer; }
+
+.button {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all .05s ease-in-out; }
+
+.button:hover {
+  background-color: #2dd664;
+  font-size: 31px;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+#recommend {
+  text-align: center; }
+  #recommend input {
+    background-color: #F6F6F6;
+    border: none;
+    font-family: "Avenir";
+    font-size: 29px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 90vw;
+    margin: 1vh 2vw; }
+
+#recommend img {
+  margin-bottom: 50px; }
+
+#recommend h1 {
+  margin-top: 30px;
+  font-size: 11vw; }
+
+#recommend p {
+  font-size: 22px;
+  font-weight: 100;
+  line-height: normal;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: all .05s ease-in-out; }
+
+#recommend input:focus {
+  outline-color: #1DB954;
+  outline-width: 8px; }
+
+#recommend .button {
+  margin-bottom: 50px; }
+
+#recommend .button-container {
+  height: 100px; }
+
+#recommend .song-grid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+
+#recommend .info-card {
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  color: #191414;
+  margin: 20px;
+  padding-top: 60px;
+  width: 95vw;
+  max-width: 400px;
+  height: 600px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+#recommend .save {
+  font-weight: lighter;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 90px;
+  background-color: #191414;
+  cursor: pointer;
+  margin-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  border: 4px double #F6F6F6;
+  color: #F6F6F6;
+  text-transform: uppercase;
+  transition: all .05s ease-in-out; }
+
+#recommend .save:hover {
+  font-size: 18px; }
+
+#recommend .saved {
+  color: #1DB954; }
+
+#recommend .save-container {
+  height: 20px; }
+
+#recommend .info-card .card-title {
+  font-size: 29px;
+  font-weight: 600;
+  padding-bottom: 8px; }
+
+#recommend .info-card .card-artist {
+  font-size: 25px;
+  margin-bottom: 15px; }
+
+#recommend #description {
+  padding: 20px; }
+
+#recommend iframe {
+  display: none; }
+
+@media (min-width: 700px) {
+  #recommend h1 {
+    font-size: 70px; } }
+
+@media (min-width: 1100px) {
+  #recommend iframe {
+    display: inline;
+    margin-top: 40px; }
+  #recommend .input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto; }
+  #recommend .button {
+    font-size: 33px; }
+  #recommend .button:hover {
+    font-size: 34px; }
+  #recommend .info-card {
+    padding-top: 50px;
+    height: 700px; } }
+
+/*# sourceMappingURL=maps/recommendStyles.8c9d90b6.css.map */

@@ -1,3 +1,5 @@
+@import 'master';
+
 #login{
   position: relative;
   height:100vh;
@@ -7,7 +9,7 @@
   font-family:Avenir;
   font-weight:900;
   font-size:30px;
-  background-color: #1DB954;
+  background-color: $spotifyGreen;
   border-radius:90px;
   padding-left: 50px;
   padding-right: 50px;
@@ -22,11 +24,11 @@
   cursor: pointer;
 }
 #login #login-button:hover{
-  background-color: rgb(45,214,100);
+  background-color: $spotifyGreenHover;
 }
 #login #login-button:active{
-  background-color: rgb(33,147,71);
-  color:rgb(188,199,192)
+  background-color: $spotifyGreenActive;
+  color:$spotifyTextActive;
 }
 #login #text{
   position: absolute;

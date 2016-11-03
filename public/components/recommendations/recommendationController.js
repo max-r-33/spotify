@@ -30,4 +30,11 @@ angular.module('spotifyApp').controller('recommendationController', function($sc
             console.log(res);
         });
     };
+
+    //removes song from user's library
+    $scope.removeSong = function(id){
+      spotifyService.removeTrack(id).then(function(res){
+        console.log(res);
+      });
+    };
 });

@@ -1,18 +1,23 @@
+@import 'master';
+
 #recommend {
     text-align: center;
+
+    input {
+        background-color: $spotifyWhite;
+        border: none;
+        font-family: "Avenir";
+        font-size: 29px;
+        padding: 10px;
+        border-radius: 3px;
+        width: 90vw;
+        margin: 1vh 2vw;
+    }
 }
 
-#recommend input {
-    background-color: #f6f6f6;
-    border: none;
-    font-family: "Avenir";
-    font-size: 29px;
-    padding: 10px;
-    border-radius: 3px;
-    width: 90vw;
-    margin: 1vh 2vw;
+#recommend img{
+  margin-bottom:50px;
 }
-
 #recommend h1 {
     margin-top: 30px;
     font-size: 11vw;
@@ -28,7 +33,7 @@
 }
 
 #recommend input:focus {
-    outline-color: #1DB954;
+    outline-color: $spotifyGreen;
     outline-width: 8px;
 }
 
@@ -52,9 +57,9 @@
 #recommend .fa {}
 
 #recommend .info-card {
-    background-color: #f6f6f6;
+    background-color: $spotifyWhite;
     border-radius: 5px;
-    color: #191414;
+    color: $spotifyBlack;
     margin: 20px;
     padding-top: 60px;
     width: 95vw;
@@ -66,31 +71,42 @@
 }
 
 #recommend .save {
-    font-size: 25px;
     font-weight: lighter;
+    font-size: 17px;
+    text-align: center;
     border-radius: 90px;
+    background-color: $spotifyBlack;
     cursor: pointer;
     margin-top: 30px;
-    display: block;
-    width: 300px;
+    padding-left:80px;
+    padding-right:80px;
+    padding-top:10px;
+    padding-bottom:10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+    border: 4px double $spotifyWhite;
+    color: $spotifyWhite;
+    text-transform: uppercase;
     transition: all .05s ease-in-out;
-    border: 4px double #f6f6f6;
-    color: #f6f6f6;
-    padding: 10px;
-    background-color: #141919;
-    transition: all .2s ease-in-out;
 }
 
 #recommend .save:hover {
-    border-color: #1DB954;
+    font-size: 18px;
 }
 
 #recommend .saved{
-    border-color:#1DB954;
+    color:$spotifyGreen;
 }
+
+#recommend .saved:hover{
+
+}
+
+#recommend .save-container{
+    height:20px;
+}
+
 #recommend .info-card .card-title {
     font-size: 29px;
     font-weight: 600;
@@ -119,6 +135,7 @@
 @media(min-width:1100px) {
     #recommend iframe {
         display: inline;
+        margin-top:40px;
     }
     #recommend .input-container {
         display: flex;

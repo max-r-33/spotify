@@ -1,6 +1,13 @@
+$spotifyGreen : #1DB954;
+$spotifyGreenHover : rgb(45,214,100);
+$spotifyGreenActive : rgb(33,147,71);
+$spotifyTextActive : rgb(188,199,192);
+$spotifyBlack : #191414;
+$spotifyWhite : #F6F6F6;
+
 body{
-  background-color:#191414;
-  color:#F6F6F6;
+  background-color:$spotifyBlack;
+  color:$spotifyWhite;
   min-width: 453px;
   font-family:Avenir;
 }
@@ -19,16 +26,16 @@ p{
   text-align: center;
 }
 input{
-  color:#191414;
+  color:$spotifyBlack;
 }
 .fa{
-  cursor: pointer; 
+  cursor: pointer;
 }
 .button{
   text-align: center;
   font-size:30px;
   font-weight: 900;
-  background-color: #1DB954;
+  background-color: $spotifyGreen;
   border-radius:90px;
   padding-left: 50px;
   padding-right: 50px;
@@ -37,11 +44,11 @@ input{
   transition: all .05s ease-in-out;
 }
 .button:hover{
-  background-color: rgb(45,214,100);
+  background-color: $spotifyGreenHover;
   font-size:31px;
   cursor: pointer;
 }
 .button:active{
-  background-color: rgb(33,147,71);
-  color:rgb(188,199,192)
+  background-color: $spotifyGreenActive;
+  color:$spotifyTextActive;
 }

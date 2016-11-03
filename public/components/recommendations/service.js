@@ -131,8 +131,18 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
       }).then(function(result){
         console.log(result.data);
       });
+    };
 
-
+    this.removeTrack = function(id){
+      $http({
+        headers: {
+          'Authorization' : 'Bearer ' + token
+        },
+        method: 'DELETE',
+        url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
+      }).then(function(result){
+        console.log(result.data);
+      });
     };
 
     //checks if song is already saved to user's library
