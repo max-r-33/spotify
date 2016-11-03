@@ -1,0 +1,21 @@
+<div id='artist'>
+  {{ artistInfo.name }}<br />
+  Already following: {{ artistInfo.alreadyFollowing}}<br />
+  Genres:
+  <div ng-repeat='genre in artistInfo.genres'>
+    {{ genre }}
+  </div>
+  <img ng-src='{{artistInfo.image.url}}'>
+  Popularity : {{ artistInfo.popularity }}
+  <br/>
+  <div ng-repeat='track in artistInfo.topTracks'>
+    {{ track.name }} <br>
+    Album: {{ track.album.name}} Popularity: {{ track.popularity}}
+    <br><br>
+  </div>
+  <br><br>
+  Albums:
+  <div ng-repeat='album in artistInfo.albums'>
+    {{album.name}}
+    <img ng-src='{{album.images[1].url}}'>
+</div>

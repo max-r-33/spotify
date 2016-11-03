@@ -32,6 +32,15 @@
         transition: all 0.05s ease-in-out;
     }
 
+    .artist{
+      text-decoration: none;
+      color:$spotifyBlack;
+      transition: text-decoration .5s ease-in-out;
+    }
+
+    .artist:hover{
+      text-decoration: underline;
+    }
     input:focus {
         outline-color: $spotifyGreen;
         outline-width: 8px;

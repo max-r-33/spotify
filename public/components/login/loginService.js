@@ -7,7 +7,7 @@ angular.module('spotifyApp').service('loginService', function($cookies, $http) {
     this.authorize = function() {
         return $http({
             method: 'GET',
-            url: "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read&response_type=token"
+            url: "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read%20user-follow-modify%20user-follow-read&response_type=token"
         });
     };
 

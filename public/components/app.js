@@ -12,7 +12,13 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 url: '/',
                 templateUrl: '/components/login/login.html',
                 controller: 'loginController'
-        });
+            })
+
+            .state('artist', {
+                url:'/artist/:id',
+                templateUrl: '/components/artist/artistTmpl.html',
+                controller: 'artistController'
+            });
         $urlRouterProvider.otherwise('/');
 
     }).config(['$cookiesProvider', function($cookiesProvider) {

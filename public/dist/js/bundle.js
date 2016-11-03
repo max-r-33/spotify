@@ -13,12 +13,111 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router']).config(function ($state
         url: '/',
         templateUrl: '/components/login/login.html',
         controller: 'loginController'
+    }).state('artist', {
+        url: '/artist/:id',
+        templateUrl: '/components/artist/artistTmpl.html',
+        controller: 'artistController'
     });
     $urlRouterProvider.otherwise('/');
 }).config(['$cookiesProvider', function ($cookiesProvider) {
     //makes token accessible for the whole app
     $cookiesProvider.defaults.path = '/';
 }]);
+'use strict';
+
+angular.module('spotifyApp').controller('artistController', function ($scope, $stateParams, artistService) {
+  $scope.artistId = $stateParams.id;
+
+  //gets artist info
+  artistService.getArtistInfo($scope.artistId).then(function (result) {
+    $scope.artistInfo = result;
+    console.log(result);
+  });
+
+  console.log($scope.artistInfo);
+});
+'use strict';
+
+angular.module('spotifyApp').service('artistService', function ($http, $q, loginService) {
+    var token = loginService.getToken();
+
+    //gets artist info from spotify
+    this.getArtistInfo = function (id) {
+        //gets basic artist info
+        var defer = $q.defer();
+        var artistInfo = {};
+        var artistID = id;
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/artists/' + id
+        }).then(function (result) {
+            artistInfo.genres = result.data.genres;
+            artistInfo.popularity = result.data.popularity;
+            artistInfo.name = result.data.name;
+            artistInfo.image = result.data.images[1];
+        }).then(function () {
+            //gets if a user follows an artist
+            $http({
+                headers: {
+                    "Authorization": 'Bearer ' + token
+                },
+                method: 'GET',
+                url: 'https://api.spotify.com/v1/me/following/contains?type=artist&ids=' + artistID
+            }).then(function (res) {
+                artistInfo.alreadyFollowing = res.data[0];
+            }).then(function () {
+                //gets an artist's top tracks
+                $http({
+                    headers: {
+                        "Authorization": 'Bearer ' + token
+                    },
+                    method: 'GET',
+                    url: 'https://api.spotify.com/v1/artists/' + artistID + '/top-tracks?country=US'
+                }).then(function (response) {
+                    artistInfo.topTracks = response.data.tracks;
+                }).then(function () {
+                    //gets an artist's albums
+                    $http({
+                        headers: {
+                            "Authorization": 'Bearer ' + token
+                        },
+                        method: 'GET',
+                        url: 'https://api.spotify.com/v1/artists/' + artistID + '/albums?country=US'
+                    }).then(function (r) {
+                        artistInfo.albums = arrayToObject(r.data.items);
+                    });
+                });
+            });
+        });
+        defer.resolve(artistInfo);
+        return defer.promise;
+    };
+
+    //follows artist with given id
+    this.followArtist = function (id) {
+        var artistID = id;
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'PUT',
+            url: 'https://api.spotify.com/v1/me/following?type=artist&ids=' + artistID
+        }).then(function (res) {
+            console.log(res);
+        });
+    };
+
+    var arrayToObject = function arrayToObject(arr) {
+        var res = {};
+        for (var i = 0; i < arr.length; i++) {
+            res[i] = arr[i];
+        }
+        return res;
+    };
+});
 'use strict';
 
 angular.module('spotifyApp').controller('authController', function ($scope, loginService, $cookies) {
@@ -50,7 +149,7 @@ angular.module('spotifyApp').controller('loginController', function ($scope, log
     //redirects to spotify permission request
     $scope.authorize = function () {
         loginService.authorize().then(function (resp) {
-            window.location = "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read&response_type=token";
+            window.location = "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read%20user-follow-modify%20user-follow-read&response_type=token";
         });
     };
     loginService.getToken();
@@ -70,7 +169,7 @@ angular.module('spotifyApp').service('loginService', function ($cookies, $http) 
     this.authorize = function () {
         return $http({
             method: 'GET',
-            url: "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read&response_type=token"
+            url: "https://accounts.spotify.com/authorize?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&scope=user-library-modify%20user-top-read%20user-library-read%20user-follow-modify%20user-follow-read&response_type=token"
         });
     };
 
