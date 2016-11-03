@@ -54,7 +54,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
             method: 'GET',
             url: 'https://api.spotify.com/v1/search?q=' + encodeURI(searchTerm) + "&type=" + type
         }).then(function(result) {
-            console.log(result);
+            // console.log(result);
 
             var info = {
                 id: result.data[type + 's'].items[0].id,
@@ -82,9 +82,13 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
                     info.instrumentalness = result.instrumentalness;
                     info.key = result.key;
                     info.tempo = result.tempo;
+                }).then(function(result){
+                  checkIfAlreadySaved(info.id).then(function(result){
+                      info.alreadySaved = result;
+                      console.log(info.alreadySaved);
+                  });
                 });
             }
-            console.log(info);
             defer.resolve(info);
         });
         return defer.promise;
@@ -116,18 +120,39 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
 
     //saves track to your library
     this.saveTrack = function(id) {
-        return $http({
+      var defer = $q.defer();
+
+      $http({
             headers: {
                 'Authorization': 'Bearer ' + token
             },
             method: 'PUT',
             url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
-        });
+      }).then(function(result){
+        console.log(result.data);
+      });
+
+
     };
 
+    //checks if song is already saved to user's library
+    var checkIfAlreadySaved = function(id){
+        var defer = $q.defer();
+        $http({
+          headers: {
+            'Authorization' : 'Bearer ' + token
+          },
+          method: 'GET',
+          url:'https://api.spotify.com/v1/me/tracks/contains?ids=' + id
+        }).then(function(result){
+          defer.resolve(result.data[0]);
+        });
+        return defer.promise;
+    };
+
+    //shortesn song titles that are too long
     var shorten = function(str) {
         var arr = str.split("");
-        console.log(arr);
         var res = [];
         for (var i = 0; i < 22; i++) {
             res.push(arr[i]);

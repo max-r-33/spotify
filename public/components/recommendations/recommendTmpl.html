@@ -8,7 +8,7 @@
         <input type="text" name="song" value="" placeholder="Song" ng-model='songName'>
         <input type="text" name="genre" value="" placeholder="Genre" ng-model='genreName'>
     </div>
-    <h1><a class='button' ng-click='getRecommendations(songName, artistName, genreName)'>Get Recommendations</a></h1>
+    <h1><div class='button-container'><a class='button' ng-click='getRecommendations(songName, artistName, genreName)'>Get Recommendations</a></div></h1>
     <div class="song-grid-container">
         <div ng-repeat='rec in recommendations' class='song-grid'>
             <div class='info-card'>
@@ -16,7 +16,8 @@
                 <p class='card-artist'>{{ rec.artistInfo.name }}</p>
                 <img ng-src='{{rec.albumImg}}' width='300' height='300'><br/>
                 <!-- <p>Popularity: {{ rec.popularity}}</p> -->
-                <a class='save' ng-click='saveSong(rec.id)'>Save to Library</a>
+                <a class='save' ng-hide='rec.alreadySaved'ng-click='saveSong(rec.id)'>Save to Library</a>
+                <a class='save saved' ng-hide='!rec.alreadySaved'>Saved to Library</a>
                 <!-- <a ng-href='{{rec.preview}}'>Preview</a><br /> -->
                 <iframe ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             </div>

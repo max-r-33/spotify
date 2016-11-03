@@ -36,6 +36,10 @@
     margin-bottom: 50px;
 }
 
+#recommend .button-container {
+    height: 100px;
+}
+
 #recommend .song-grid {}
 
 #recommend .song-grid-container {
@@ -64,7 +68,7 @@
 #recommend .save {
     font-size: 25px;
     font-weight: lighter;
-    border-radius: 30px;
+    border-radius: 90px;
     cursor: pointer;
     margin-top: 30px;
     display: block;
@@ -74,10 +78,18 @@
     margin-bottom: 30px;
     transition: all .05s ease-in-out;
     border: 4px double #f6f6f6;
-    border-radius: 30px;
     color: #f6f6f6;
-    padding:10px;
+    padding: 10px;
     background-color: #141919;
+    transition: all .2s ease-in-out;
+}
+
+#recommend .save:hover {
+    border-color: #1DB954;
+}
+
+#recommend .saved{
+    border-color:#1DB954;
 }
 #recommend .info-card .card-title {
     font-size: 29px;
