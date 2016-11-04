@@ -1,0 +1,126 @@
+@import 'master';
+
+#artist{
+  color: $spotifyWhite;
+  text-align: center;
+
+  h3{
+    font-size:28px;
+    font-weight: bolder;
+    line-height: 60px;
+  }
+
+  #profile-img{
+    height:300px;
+    border-radius: 50%;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #profile-name{
+    font-size:55px;
+    font-weight: bolder;
+  }
+
+  .follow{
+    background-color: $spotifyBlack;
+    font-weight:500;
+    border:1px solid $spotifyButtonBorder;
+    font-variant: small-caps;
+    width:80%;
+    font-size:25px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:40px;
+    transform:font-size .1s ease-in-out;
+    padding-left: 35%;
+    padding-right: 35%;
+    cursor:pointer;
+  }
+
+  .follow-container{
+    height:40px;
+  }
+
+  .follow:hover{
+    font-size:27px;
+    border-color: $spotifyWhite
+  }
+
+  .unfollow{
+    color: $spotifyGreen;
+  }
+
+  .popular-container{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .song-row{
+    border-top: .25px solid $spotifyGridBorder;
+    border-bottom: .25px solid $spotifyGridBorder;
+    text-align: left;
+    font-size:22px;
+  }
+
+  .song-row:first-child{
+    border-top:1px solid $spotifyGridBorder;
+  }
+
+  .song-row:hover{
+    background-color: $spotifyGridBorder;
+  }
+
+  .song-name{
+    text-align: left;
+    float:left;
+    padding-top:17px;
+    padding-left:2.5vw;
+  }
+  .row-image{
+      margin:0;
+      padding:0;
+      display: inline;
+      float:left;
+  }
+  .popularity{
+    float: right;
+    padding-top:17px;
+    padding-right:1.5vw;
+  }
+}
+
+@media(min-width:700px){
+  #artist{
+
+    #profile-img{
+      height:300px;
+    }
+
+    #profile-name{
+      font-size:70px;
+    }
+
+    .set-width{
+      width:600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media(min-width:1000px){
+  #artist{
+
+    #profile-name{
+      font-size:80px;
+    }
+  }
+}

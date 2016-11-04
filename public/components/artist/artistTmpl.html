@@ -1,21 +1,23 @@
 <div id='artist'>
-  {{ artistInfo.name }}<br />
-  Already following: {{ artistInfo.alreadyFollowing}}<br />
-  Genres:
+    <img id='profile-img' ng-src='{{artistInfo.image.url}}'><br/>
+    <h1 id='profile-name'>{{ artistInfo.name }}</h1>
+    <h1><div class='set-width' ng-hide='artistInfo.alreadyFollowing'><a ng-click='artistInfo.alreadyFollowing = !artistInfo.alreadyFollowing; follow(artistID)' class='follow'>follow</a></span></h1>
+    <h1><div class='set-width' ng-hide='!artistInfo.alreadyFollowing'><a ng-click='artistInfo.alreadyFollowing = !artistInfo.alreadyFollowing; unfollow(artistID)' class='follow unfollow'>unfollow</a></span></h1>
+    <!-- Genres:
   <div ng-repeat='genre in artistInfo.genres'>
     {{ genre }}
   </div>
-  <img ng-src='{{artistInfo.image.url}}'>
   Popularity : {{ artistInfo.popularity }}
-  <br/>
-  <div ng-repeat='track in artistInfo.topTracks'>
-    {{ track.name }} <br>
-    Album: {{ track.album.name}} Popularity: {{ track.popularity}}
-    <br><br>
-  </div>
-  <br><br>
+  <br/> -->
+    <div class='popular-container'>
+        <h3>Popular</h3>
+        <div class='song-row' ng-repeat='track in artistInfo.topTracks'>
+            <img class='row-image' ng-src='{{track.album.images[0].url}}' height='55px'><span class='song-name'>{{ track.name }}</span><span class='popularity'>{{track.popularity}}</span>
+        </div>
+    </div>
+    <!--
   Albums:
   <div ng-repeat='album in artistInfo.albums'>
     {{album.name}}
-    <img ng-src='{{album.images[1].url}}'>
+    <img ng-src='{{album.images[1].url}}'> -->
 </div>

@@ -16,8 +16,8 @@
                 <a class='artist' ui-sref='artist({id: rec.artistInfo.id})'><p class='card-artist'>{{ rec.artistInfo.name }}</p></a>
                 <img ng-src='{{rec.albumImg}}' width='300' height='300'><br/>
                 <!-- <p>Popularity: {{ rec.popularity}}</p> -->
-                <div ng-hide='rec.alreadySaved' class='save-container'><a class='save'  ng-click='rec.alreadySaved = !rec.alreadySaved; saveSong(rec.id)'>Save to Library</a></div>
-                <div ng-hide='!rec.alreadySaved' class='save-container'><a class='save saved' ng-click='rec.alreadySaved = !rec.alreadySaved; removeSong(rec.id)'>Saved to Library</a></div>
+                <div ng-hide='rec.alreadySaved' class='save-container'><a class='save'  ng-click='rec.alreadySaved = !rec.alreadySaved; saveSong(rec.id)'>save to library</a></div>
+                <div ng-hide='!rec.alreadySaved' class='save-container'><a class='save saved' ng-click='rec.alreadySaved = !rec.alreadySaved; removeSong(rec.id)'>saved to library</a></div>
                 <!-- <a ng-href='{{rec.preview}}'>Preview</a><br /> -->
                 <iframe ng-src="{{rec.uri | trustAsResourceUrl}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             </div>
