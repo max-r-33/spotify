@@ -2,11 +2,11 @@ $spotifyGreen: #1DB954;
 $spotifyGreenHover: rgb(45,214,100);
 $spotifyGreenActive: rgb(33,147,71);
 $spotifyTextActive: rgb(188,199,192);
-$spotifyBlack: #191414;
-$spotifyWhite: #F6F6F6;
+$spotifyBlack: rgb(25,20,20);
+$spotifyWhite: rgb(246, 246, 246);
 $spotifyButtonBorder: rgb(160,160,160);
 $spotifyGridBorder : rgb(40,40,40);
-
+$spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);
 body {
     background-color: $spotifyBlack;
     color: $spotifyWhite;

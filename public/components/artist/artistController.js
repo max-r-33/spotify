@@ -1,25 +1,31 @@
-angular.module('spotifyApp').controller('artistController', function($scope, $stateParams, artistService){
+angular.module('spotifyApp').controller('artistController', function($scope, $stateParams, artistService, spotifyService){
   $scope.artistId = $stateParams.id;
 
   //gets artist info
   artistService.getArtistInfo($scope.artistId).then(function(result){
       $scope.artistInfo = result;
-      console.log(result);
+      console.log($scope.artistInfo);
   });
 
   //follows artist
-  $scope.follow = function(id){
-      console.log($scope.artistId);
+  $scope.follow = function(){
       artistService.followArtist($scope.artistId);
   };
 
 
   //unfollows artist
-  $scope.unfollow = function(id){
-      console.log($scope.artistId);
+  $scope.unfollow = function(){
       artistService.unfollowArtist($scope.artistId);
   };
 
+  //saves song to user's library
+  $scope.saveSong = function(id){
+      spotifyService.saveTrack(id);
+  };
 
-  console.log($scope.artistInfo);
+  //removes saved song from user's library
+  $scope.removeSong = function(id){
+      spotifyService.removeTrack(id);
+  };
+
 });

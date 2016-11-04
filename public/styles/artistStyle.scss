@@ -82,7 +82,7 @@
     text-align: left;
     float:left;
     padding-top:17px;
-    padding-left:2.5vw;
+    padding-left:1.5vw;
   }
   .row-image{
       margin:0;
@@ -95,6 +95,49 @@
     padding-top:17px;
     padding-right:1.5vw;
   }
+
+  .fa{
+    float:left;
+    color:$spotifyAddButtonBeforeHover;
+    transform:all .75s ease-in-out;
+    padding-top:17px;
+    padding-left:1.5vw;
+  }
+
+  .fa:hover{
+    color:$spotifyWhite;
+  }
+
+  .main-container{
+    text-align: left;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:33px;
+  }
+  .album-list-container{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .single-album-container{
+    display:flex;
+    flex-direction: row;
+
+    .songs-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .album-name{
+      font-size:33px;
+      font-weight: bolder;
+      margin-left:25px;
+    }
+
+  }
+
+
 }
 
 @media(min-width:700px){

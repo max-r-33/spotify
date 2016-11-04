@@ -26,15 +26,11 @@ angular.module('spotifyApp').controller('recommendationController', function($sc
 
     //saves song to user's library
     $scope.saveSong = function(id) {
-        spotifyService.saveTrack(id).then(function(res) {
-            console.log(res);
-        });
+        spotifyService.saveTrack(id);
     };
 
     //removes song from user's library
     $scope.removeSong = function(id){
-      spotifyService.removeTrack(id).then(function(res){
-        console.log(res);
-      });
+      spotifyService.removeTrack(id);
     };
 });

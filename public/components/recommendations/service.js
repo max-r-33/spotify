@@ -120,6 +120,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
 
     //saves track to your library
     this.saveTrack = function(id) {
+      token = loginService.getToken();
       var defer = $q.defer();
 
       $http({
@@ -134,6 +135,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
     };
 
     this.removeTrack = function(id){
+      token = loginService.getToken();
       $http({
         headers: {
           'Authorization' : 'Bearer ' + token
