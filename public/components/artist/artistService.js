@@ -43,11 +43,11 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
                     url: 'https://api.spotify.com/v1/artists/' + artistID + '/top-tracks?country=US'
                 }).then(function(response) {
                     artistInfo.topTracks = response.data.tracks;
-                    artistInfo.topTracks.forEach(function(track){
-                      //checks if a user already
-                      checkIfSongSaved(track.id).then(function(result){
-                        track.alreadySaved = result.data[0];
-                      });
+                    artistInfo.topTracks.forEach(function(track) {
+                        //checks if a user already
+                        checkIfSongSaved(track.id).then(function(result) {
+                            track.alreadySaved = result.data[0];
+                        });
                     });
                 }).then(function() {
                     //gets an artist's albums
@@ -61,16 +61,16 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
                         // console.log(r);
                         var albumArr = [];
                         //filters out singles and compilations
-                        for(var i = 0; i < r.data.items.length; i++){
-                            if(r.data.items[i].album_type === 'album'){
-                              albumArr.push(r.data.items[i]);
+                        for (var i = 0; i < r.data.items.length; i++) {
+                            if (r.data.items[i].album_type === 'album') {
+                                albumArr.push(r.data.items[i]);
                             }
                         }
                         artistInfo.albums = albumArr;
                         console.log(artistInfo.albums);
                         //request to get all tracks from each album
-                        for(var x = 0; x < artistInfo.albums.length; x++){
-                          getTracksOnAlbum(artistInfo.albums[x].id, x);
+                        for (var x = 0; x < artistInfo.albums.length; x++) {
+                            getTracksOnAlbum(artistInfo.albums[x].id, x);
                         }
 
                         //if there were no sqaure images from the artist
@@ -118,30 +118,30 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
     };
 
     //checks if a song is already saved to a user's library
-    var checkIfSongSaved = function(id){
-      var artistID = id;
-      return $http({
-        headers: {
-            "Authorization": 'Bearer ' + token
-        },
-        method:'GET',
-        url:'https://api.spotify.com/v1/me/tracks/contains?ids=' + artistID
-      });
+    var checkIfSongSaved = function(id) {
+        var artistID = id;
+        return $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + artistID
+        });
     };
 
     //gets tracks on album with given id, made it a separate
     //function to break scope
-    var getTracksOnAlbum = function(id, index){
-      var artistID = id;
-      $http({
-        headers: {
-            "Authorization": 'Bearer ' + token
-        },
-        method:'GET',
-        url:'https://api.spotify.com/v1/albums/' + artistID
-      }).then(function(trackList){
-        artistInfo.albums[index].tracks = trackList.data.tracks;
-      });
+    var getTracksOnAlbum = function(id, index) {
+        var artistID = id;
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/albums/' + artistID
+        }).then(function(trackList) {
+            artistInfo.albums[index].tracks = trackList.data.tracks;
+        });
     };
 
 });

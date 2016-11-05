@@ -28,11 +28,10 @@
     }
 
     h2 {
-        font-size: 40px;
+        font-size: 4vw;
         font-weight: 600;
         color: $spotifyWhite;
         margin-top: 10px;
-        line-height: 60px;
         cursor:default;
     }
 
@@ -63,13 +62,17 @@
 
     .save-container {
         height: 21px;
+        position:absolute;
+        top:187px;
+        width:300px;
     }
 
     .save:hover {
         font-size: 18px;
         border-color: $spotifyWhite;
     }
-
+    .position-preserve{
+    }
     .saved {
         color: $spotifyGreen;
     }
@@ -114,7 +117,14 @@
 @media(min-width:680px) {
     #album {
         h2 {
-            font-size: 60px;
+            font-size: 45px;
         }
     }
+}
+@media(min-width:1450px){
+  #album{
+    h2{
+      font-size:70px;
+    }
+  }
 }
