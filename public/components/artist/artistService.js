@@ -4,6 +4,7 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
     //gets artist info from spotify
     this.getArtistInfo = function(id) {
         //gets basic artist info
+        artistInfo.image = undefined;
         var defer = $q.defer();
         var artistID = id;
         $http({
@@ -22,7 +23,6 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
                     artistInfo.image = result.data.images[i];
                 }
             }
-            artistInfo.image = result.data.images[1];
         }).then(function() {
             //gets if a user follows an artist
             $http({

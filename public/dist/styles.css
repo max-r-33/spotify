@@ -49,7 +49,7 @@ html, html a {
 
 /*# sourceMappingURL=maps/reset.e4e8a912.css.map */
 
-{"version":3,"file":"../artistStyle.bb48d2ae.css","sources":["artistStyle.scss","master.scss"],"sourcesContent":["@import 'master';\n\n#artist{\n  color: $spotifyWhite;\n  text-align: center;\n\n  h3{\n    font-size:28px;\n    font-weight: bolder;\n    line-height: 60px;\n  }\n\n  #profile-img{\n    height:300px;\n    border-radius: 50%;\n    margin-top:30px;\n    margin-left: auto;\n    margin-right: auto;\n  }\n\n  #profile-name{\n    font-size:55px;\n    font-weight: bolder;\n  }\n\n  .follow{\n    background-color: $spotifyBlack;\n    font-weight:500;\n    border:1px solid $spotifyButtonBorder;\n    font-variant: small-caps;\n    width:80%;\n    font-size:25px;\n    padding-top:10px;\n    padding-bottom: 10px;\n    margin-left: auto;\n    margin-right: auto;\n    border-radius:40px;\n    transform:font-size .1s ease-in-out;\n    padding-left: 35%;\n    padding-right: 35%;\n    cursor:pointer;\n  }\n\n  .follow-container{\n    height:40px;\n  }\n\n  .follow:hover{\n    font-size:27px;\n    border-color: $spotifyWhite\n  }\n\n  .unfollow{\n    color: $spotifyGreen;\n  }\n\n  .popular-container{\n    display: flex;\n    flex-direction: column;\n    width:80%;\n    margin-left: auto;\n    margin-right: auto;\n    text-align: left;\n  }\n\n  .song-row{\n    border-top: .25px solid $spotifyGridBorder;\n    border-bottom: .25px solid $spotifyGridBorder;\n    text-align: left;\n    font-size:22px;\n  }\n\n  .song-row:first-child{\n    border-top:1px solid $spotifyGridBorder;\n  }\n\n  .song-row:hover{\n    background-color: $spotifyGridBorder;\n  }\n\n  .song-name{\n    text-align: left;\n    float:left;\n    padding-top:17px;\n    padding-left:1.5vw;\n  }\n  .row-image{\n      margin:0;\n      padding:0;\n      display: inline;\n      float:left;\n  }\n  .popularity{\n    float: right;\n    padding-top:17px;\n    padding-right:1.5vw;\n  }\n\n  .fa{\n    float:left;\n    color:$spotifyAddButtonBeforeHover;\n    transform:all .75s ease-in-out;\n    padding-top:17px;\n    padding-left:1.5vw;\n  }\n\n  .fa:hover{\n    color:$spotifyWhite;\n  }\n\n  .main-container{\n    text-align: left;\n    width:80%;\n    margin-left: auto;\n    margin-right: auto;\n    margin-top:33px;\n  }\n  .album-list-container{\n    display:flex;\n    flex-direction: column;\n  }\n\n  .single-album-container{\n    display:flex;\n    flex-direction: row;\n\n    .songs-container{\n      display: flex;\n      flex-direction: column;\n    }\n\n    .album-name{\n      font-size:33px;\n      font-weight: bolder;\n      margin-left:25px;\n    }\n\n  }\n\n\n}\n\n@media(min-width:700px){\n  #artist{\n\n    #profile-img{\n      height:300px;\n    }\n\n    #profile-name{\n      font-size:70px;\n    }\n\n    .set-width{\n      width:600px;\n      margin-left: auto;\n      margin-right: auto;\n    }\n  }\n}\n\n@media(min-width:1000px){\n  #artist{\n\n    #profile-name{\n      font-size:80px;\n    }\n  }\n}\n","$spotifyGreen: #1DB954;\n$spotifyGreenHover: rgb(45,214,100);\n$spotifyGreenActive: rgb(33,147,71);\n$spotifyTextActive: rgb(188,199,192);\n$spotifyBlack: rgb(25,20,20);\n$spotifyWhite: rgb(246, 246, 246);\n$spotifyButtonBorder: rgb(160,160,160);\n$spotifyGridBorder : rgb(40,40,40);\n$spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);\nbody {\n    background-color: $spotifyBlack;\n    color: $spotifyWhite;\n    min-width: 453px;\n    font-family: Avenir;\n}\n\nh1 {\n    font-size: 70px;\n    font-weight: 500;\n    line-height: 60px;\n    margin: 15px;\n}\n\na {\n    text-decoration: none;\n}\n\np {\n    font-size: 27px;\n    font-weight: 600;\n    text-align: center;\n}\n\ninput {\n    color: $spotifyBlack;\n}\n\n.fa {\n    cursor: pointer;\n}\n\n.button {\n    text-align: center;\n    font-size: 30px;\n    font-weight: 900;\n    background-color: $spotifyGreen;\n    border-radius: 90px;\n    padding: 10px 50px;\n    transition: all 0.05s ease-in-out;\n}\n\n.button:hover {\n    background-color: $spotifyGreenHover;\n    font-size: 31px;\n    cursor: pointer;\n}\n\n.button:active {\n    background-color: $spotifyGreenActive;\n    color: $spotifyTextActive;\n}\n"],"mappings":"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","names":[]}
+{"version":3,"file":"../albumStyle.10a5714f.css","sources":["albumStyle.scss","master.scss","artistStyle.scss"],"sourcesContent":["@import 'master';\n@import 'artistStyle';\n\n#album {\n    img {\n        float: left;\n    }\n\n    .top-header {\n        display: flex;\n        flex-direction: row;\n        padding-top: 15px;\n        padding-left: 30px;\n    }\n\n    .album-info {\n        display: flex;\n        flex-direction: column;\n        margin-left: 20px;\n        color: rgb(159,159,159);\n        position: relative;\n    }\n\n    .desc {\n        font-variant: small-caps;\n        font-size: 18px;\n        font-weight: 500;\n    }\n\n    h2 {\n        font-size: 40px;\n        font-weight: 600;\n        color: $spotifyWhite;\n        margin-top: 10px;\n        line-height: 60px;\n        cursor:default;\n    }\n\n    .artist-link {\n        color: $spotifyWhite;\n        display: inline;\n        line-height: 30px;\n    }\n\n    .artist-link:hover {\n        text-decoration: underline;\n    }\n\n    .save {\n        background-color: $spotifyBlack;\n        font-weight: 500;\n        border: 1px solid $spotifyButtonBorder;\n        font-variant: small-caps;\n        font-size: 17px;\n        padding-top: 3px;\n        padding-bottom: 3px;\n        border-radius: 40px;\n        padding-left: 15%;\n        padding-right: 15%;\n        cursor: pointer;\n    }\n\n    .save-container {\n        height: 21px;\n    }\n\n    .save:hover {\n        font-size: 18px;\n        border-color: $spotifyWhite;\n    }\n\n    .saved {\n        color: $spotifyGreen;\n    }\n\n    .track-container {\n        display: flex;\n        flex-direction: column;\n        margin-left: 30px;\n        margin-top: 50px;\n        margin-right: 30px;\n    }\n\n    .song-name {\n        font-size: 17px;\n        position:absolute;\n        left:120px;\n    }\n\n    .song-row {\n        padding-top: 7.25px;\n        padding-bottom: 7.25px;\n    }\n\n    .fa {\n        color: $spotifyAddButtonBeforeHover;\n        position: absolute;\n        left:80px;\n    }\n\n    .fa:hover {\n        color: $spotifyWhite;\n    }\n\n    .number{\n        color:$spotifyButtonBorder;\n        font-size:14px;\n        margin-left:10px;\n        margin-right:25px;\n        margin-bottom:10px;\n    }\n}\n@media(min-width:680px) {\n    #album {\n        h2 {\n            font-size: 60px;\n        }\n    }\n}\n","$spotifyGreen: #1DB954;\n$spotifyGreenHover: rgb(45,214,100);\n$spotifyGreenActive: rgb(33,147,71);\n$spotifyTextActive: rgb(188,199,192);\n$spotifyBlack: rgb(25,20,20);\n$spotifyWhite: rgb(246, 246, 246);\n$spotifyButtonBorder: rgb(160,160,160);\n$spotifyGridBorder : rgb(40,40,40);\n$spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);\nbody {\n    background-color: $spotifyBlack;\n    color: $spotifyWhite;\n    min-width: 453px;\n    font-family: Avenir;\n}\n\nh1 {\n    font-size: 70px;\n    font-weight: 500;\n    line-height: 60px;\n    margin: 15px;\n}\n\na {\n    text-decoration: none;\n}\n\np {\n    font-size: 27px;\n    font-weight: 600;\n    text-align: center;\n}\n\ninput {\n    color: $spotifyBlack;\n}\n\n.fa {\n    cursor: pointer;\n}\n\n.button {\n    text-align: center;\n    font-size: 30px;\n    font-weight: 900;\n    background-color: $spotifyGreen;\n    border-radius: 90px;\n    padding: 10px 50px;\n    transition: all 0.05s ease-in-out;\n}\n\n.button:hover {\n    background-color: $spotifyGreenHover;\n    font-size: 31px;\n    cursor: pointer;\n}\n\n.button:active {\n    background-color: $spotifyGreenActive;\n    color: $spotifyTextActive;\n}\n","@import 'master';\n\n.song-row {\n    border-top: 0.25px solid $spotifyGridBorder;\n    border-bottom: 0.25px solid $spotifyGridBorder;\n    text-align: left;\n    font-size: 22px;\n}\n\n.song-row:first-child {\n    border-top: 1px solid $spotifyGridBorder;\n}\n\n.song-row:hover {\n    background-color: $spotifyGridBorder;\n}\n\n#artist {\n    color: $spotifyWhite;\n    text-align: center;\n\n    h3 {\n        font-size: 28px;\n        font-weight: bolder;\n        line-height: 60px;\n    }\n\n    #profile-img {\n        height: 300px;\n        border-radius: 50%;\n        margin-top: 30px;\n        margin-left: auto;\n        margin-right: auto;\n    }\n\n    #profile-name {\n        font-size: 55px;\n        font-weight: bolder;\n    }\n\n    .follow {\n        background-color: $spotifyBlack;\n        font-weight: 500;\n        border: 1px solid $spotifyButtonBorder;\n        font-variant: small-caps;\n        width: 80%;\n        font-size: 25px;\n        padding-top: 10px;\n        padding-bottom: 10px;\n        margin-left: auto;\n        margin-right: auto;\n        border-radius: 40px;\n        transform: font-size 0.1s ease-in-out;\n        padding-left: 35%;\n        padding-right: 35%;\n        cursor: pointer;\n    }\n\n    .follow-container {\n        height: 40px;\n    }\n\n    .follow:hover {\n        font-size: 27px;\n        border-color: $spotifyWhite;\n    }\n\n    .unfollow {\n        color: $spotifyGreen;\n    }\n\n    .fa {\n        float: left;\n        color: $spotifyAddButtonBeforeHover;\n        transform: all 0.75s ease-in-out;\n        padding-top: 17px;\n        padding-left: 1.5vw;\n    }\n\n    .fa:hover {\n        color: $spotifyWhite;\n    }\n\n    .song-name {\n        text-align: left;\n        float: left;\n        padding-top: 17px;\n        padding-left: 1.5vw;\n    }\n\n    .row-image {\n        margin: 0;\n        padding: 0;\n        display: inline;\n        float: left;\n    }\n\n    .popularity {\n        float: right;\n        padding-top: 17px;\n        padding-right: 1.5vw;\n    }\n\n    .popular-container {\n        display: flex;\n        flex-direction: column;\n        width: 80%;\n        margin-left: auto;\n        margin-right: auto;\n        text-align: left;\n    }\n\n    .main-container {\n        text-align: left;\n        width: 80%;\n        margin-left: auto;\n        margin-right: auto;\n        margin-top: 33px;\n    }\n\n    .album-list-container {\n        display: flex;\n        flex-direction: column;\n    }\n\n    .single-album-container {\n        display: flex;\n        flex-direction: row;\n\n        .songs-container {\n            display: flex;\n            flex-direction: column;\n        }\n\n        .album-name {\n            font-size: 33px;\n            font-weight: bolder;\n            margin-left: 25px;\n        }\n    }\n}\n@media(min-width:700px) {\n    #artist {\n        #profile-img {\n            height: 300px;\n        }\n\n        #profile-name {\n            font-size: 70px;\n        }\n\n        .set-width {\n            width: 600px;\n            margin-left: auto;\n            margin-right: auto;\n        }\n    }\n}\n@media(min-width:1000px) {\n    #artist {\n        #profile-name {\n            font-size: 80px;\n        }\n    }\n}\n"],"mappings":"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","names":[]}
 body {
   background-color: #191414;
   color: #f6f6f6;
@@ -94,6 +94,62 @@ input {
   background-color: #219347;
   color: #bcc7c0; }
 
+body {
+  background-color: #191414;
+  color: #f6f6f6;
+  min-width: 453px;
+  font-family: Avenir; }
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 15px; }
+
+a {
+  text-decoration: none; }
+
+p {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center; }
+
+input {
+  color: #191414; }
+
+.fa {
+  cursor: pointer; }
+
+.button {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding: 10px 50px;
+  transition: all 0.05s ease-in-out; }
+
+.button:hover {
+  background-color: #2dd664;
+  font-size: 31px;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+.song-row {
+  border-top: 0.25px solid #282828;
+  border-bottom: 0.25px solid #282828;
+  text-align: left;
+  font-size: 22px; }
+
+.song-row:first-child {
+  border-top: 1px solid #282828; }
+
+.song-row:hover {
+  background-color: #282828; }
+
 #artist {
   color: #f6f6f6;
   text-align: center; }
@@ -122,7 +178,7 @@ input {
     margin-left: auto;
     margin-right: auto;
     border-radius: 40px;
-    transform: font-size .1s ease-in-out;
+    transform: font-size 0.1s ease-in-out;
     padding-left: 35%;
     padding-right: 35%;
     cursor: pointer; }
@@ -133,22 +189,14 @@ input {
     border-color: #f6f6f6; }
   #artist .unfollow {
     color: #1DB954; }
-  #artist .popular-container {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left; }
-  #artist .song-row {
-    border-top: 0.25px solid #282828;
-    border-bottom: 0.25px solid #282828;
-    text-align: left;
-    font-size: 22px; }
-  #artist .song-row:first-child {
-    border-top: 1px solid #282828; }
-  #artist .song-row:hover {
-    background-color: #282828; }
+  #artist .fa {
+    float: left;
+    color: rgba(246, 246, 246, 0.7);
+    transform: all 0.75s ease-in-out;
+    padding-top: 17px;
+    padding-left: 1.5vw; }
+  #artist .fa:hover {
+    color: #f6f6f6; }
   #artist .song-name {
     text-align: left;
     float: left;
@@ -163,14 +211,13 @@ input {
     float: right;
     padding-top: 17px;
     padding-right: 1.5vw; }
-  #artist .fa {
-    float: left;
-    color: rgba(246, 246, 246, 0.7);
-    transform: all .75s ease-in-out;
-    padding-top: 17px;
-    padding-left: 1.5vw; }
-  #artist .fa:hover {
-    color: #f6f6f6; }
+  #artist .popular-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; }
   #artist .main-container {
     text-align: left;
     width: 80%;
@@ -205,7 +252,263 @@ input {
   #artist #profile-name {
     font-size: 80px; } }
 
-/*# sourceMappingURL=maps/artistStyle.bb48d2ae.css.map */
+#album img {
+  float: left; }
+
+#album .top-header {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-left: 30px; }
+
+#album .album-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  color: #9f9f9f;
+  position: relative; }
+
+#album .desc {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: 500; }
+
+#album h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #f6f6f6;
+  margin-top: 10px;
+  line-height: 60px;
+  cursor: default; }
+
+#album .artist-link {
+  color: #f6f6f6;
+  display: inline;
+  line-height: 30px; }
+
+#album .artist-link:hover {
+  text-decoration: underline; }
+
+#album .save {
+  background-color: #191414;
+  font-weight: 500;
+  border: 1px solid #a0a0a0;
+  font-variant: small-caps;
+  font-size: 17px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 40px;
+  padding-left: 15%;
+  padding-right: 15%;
+  cursor: pointer; }
+
+#album .save-container {
+  height: 21px; }
+
+#album .save:hover {
+  font-size: 18px;
+  border-color: #f6f6f6; }
+
+#album .saved {
+  color: #1DB954; }
+
+#album .track-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-right: 30px; }
+
+#album .song-name {
+  font-size: 17px;
+  position: absolute;
+  left: 120px; }
+
+#album .song-row {
+  padding-top: 7.25px;
+  padding-bottom: 7.25px; }
+
+#album .fa {
+  color: rgba(246, 246, 246, 0.7);
+  position: absolute;
+  left: 80px; }
+
+#album .fa:hover {
+  color: #f6f6f6; }
+
+#album .number {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 25px;
+  margin-bottom: 10px; }
+
+@media (min-width: 680px) {
+  #album h2 {
+    font-size: 60px; } }
+
+/*# sourceMappingURL=maps/albumStyle.10a5714f.css.map */
+
+{"version":3,"file":"../artistStyle.18de5684.css","sources":["artistStyle.scss","master.scss"],"sourcesContent":["@import 'master';\n\n.song-row {\n    border-top: 0.25px solid $spotifyGridBorder;\n    border-bottom: 0.25px solid $spotifyGridBorder;\n    text-align: left;\n    font-size: 22px;\n}\n\n.song-row:first-child {\n    border-top: 1px solid $spotifyGridBorder;\n}\n\n.song-row:hover {\n    background-color: $spotifyGridBorder;\n}\n\n#artist {\n    color: $spotifyWhite;\n    text-align: center;\n\n    h3 {\n        font-size: 28px;\n        font-weight: bolder;\n        line-height: 60px;\n    }\n\n    #profile-img {\n        height: 300px;\n        border-radius: 50%;\n        margin-top: 30px;\n        margin-left: auto;\n        margin-right: auto;\n    }\n\n    #profile-name {\n        font-size: 55px;\n        font-weight: bolder;\n    }\n\n    .follow {\n        background-color: $spotifyBlack;\n        font-weight: 500;\n        border: 1px solid $spotifyButtonBorder;\n        font-variant: small-caps;\n        width: 80%;\n        font-size: 25px;\n        padding-top: 10px;\n        padding-bottom: 10px;\n        margin-left: auto;\n        margin-right: auto;\n        border-radius: 40px;\n        transform: font-size 0.1s ease-in-out;\n        padding-left: 35%;\n        padding-right: 35%;\n        cursor: pointer;\n    }\n\n    .follow-container {\n        height: 40px;\n    }\n\n    .follow:hover {\n        font-size: 27px;\n        border-color: $spotifyWhite;\n    }\n\n    .unfollow {\n        color: $spotifyGreen;\n    }\n\n    .fa {\n        float: left;\n        color: $spotifyAddButtonBeforeHover;\n        transform: all 0.75s ease-in-out;\n        padding-top: 17px;\n        padding-left: 1.5vw;\n    }\n\n    .fa:hover {\n        color: $spotifyWhite;\n    }\n\n    .song-name {\n        text-align: left;\n        float: left;\n        padding-top: 17px;\n        padding-left: 1.5vw;\n    }\n\n    .row-image {\n        margin: 0;\n        padding: 0;\n        display: inline;\n        float: left;\n    }\n\n    .popularity {\n        float: right;\n        padding-top: 17px;\n        padding-right: 1.5vw;\n    }\n\n    .popular-container {\n        display: flex;\n        flex-direction: column;\n        width: 80%;\n        margin-left: auto;\n        margin-right: auto;\n        text-align: left;\n    }\n\n    .main-container {\n        text-align: left;\n        width: 80%;\n        margin-left: auto;\n        margin-right: auto;\n        margin-top: 33px;\n    }\n\n    .album-list-container {\n        display: flex;\n        flex-direction: column;\n    }\n\n    .single-album-container {\n        display: flex;\n        flex-direction: row;\n\n        .songs-container {\n            display: flex;\n            flex-direction: column;\n        }\n\n        .album-name {\n            font-size: 33px;\n            font-weight: bolder;\n            margin-left: 25px;\n        }\n    }\n}\n@media(min-width:700px) {\n    #artist {\n        #profile-img {\n            height: 300px;\n        }\n\n        #profile-name {\n            font-size: 70px;\n        }\n\n        .set-width {\n            width: 600px;\n            margin-left: auto;\n            margin-right: auto;\n        }\n    }\n}\n@media(min-width:1000px) {\n    #artist {\n        #profile-name {\n            font-size: 80px;\n        }\n    }\n}\n","$spotifyGreen: #1DB954;\n$spotifyGreenHover: rgb(45,214,100);\n$spotifyGreenActive: rgb(33,147,71);\n$spotifyTextActive: rgb(188,199,192);\n$spotifyBlack: rgb(25,20,20);\n$spotifyWhite: rgb(246, 246, 246);\n$spotifyButtonBorder: rgb(160,160,160);\n$spotifyGridBorder : rgb(40,40,40);\n$spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);\nbody {\n    background-color: $spotifyBlack;\n    color: $spotifyWhite;\n    min-width: 453px;\n    font-family: Avenir;\n}\n\nh1 {\n    font-size: 70px;\n    font-weight: 500;\n    line-height: 60px;\n    margin: 15px;\n}\n\na {\n    text-decoration: none;\n}\n\np {\n    font-size: 27px;\n    font-weight: 600;\n    text-align: center;\n}\n\ninput {\n    color: $spotifyBlack;\n}\n\n.fa {\n    cursor: pointer;\n}\n\n.button {\n    text-align: center;\n    font-size: 30px;\n    font-weight: 900;\n    background-color: $spotifyGreen;\n    border-radius: 90px;\n    padding: 10px 50px;\n    transition: all 0.05s ease-in-out;\n}\n\n.button:hover {\n    background-color: $spotifyGreenHover;\n    font-size: 31px;\n    cursor: pointer;\n}\n\n.button:active {\n    background-color: $spotifyGreenActive;\n    color: $spotifyTextActive;\n}\n"],"mappings":"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","names":[]}
+body {
+  background-color: #191414;
+  color: #f6f6f6;
+  min-width: 453px;
+  font-family: Avenir; }
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 15px; }
+
+a {
+  text-decoration: none; }
+
+p {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center; }
+
+input {
+  color: #191414; }
+
+.fa {
+  cursor: pointer; }
+
+.button {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  background-color: #1DB954;
+  border-radius: 90px;
+  padding: 10px 50px;
+  transition: all 0.05s ease-in-out; }
+
+.button:hover {
+  background-color: #2dd664;
+  font-size: 31px;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #219347;
+  color: #bcc7c0; }
+
+.song-row {
+  border-top: 0.25px solid #282828;
+  border-bottom: 0.25px solid #282828;
+  text-align: left;
+  font-size: 22px; }
+
+.song-row:first-child {
+  border-top: 1px solid #282828; }
+
+.song-row:hover {
+  background-color: #282828; }
+
+#artist {
+  color: #f6f6f6;
+  text-align: center; }
+  #artist h3 {
+    font-size: 28px;
+    font-weight: bolder;
+    line-height: 60px; }
+  #artist #profile-img {
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto; }
+  #artist #profile-name {
+    font-size: 55px;
+    font-weight: bolder; }
+  #artist .follow {
+    background-color: #191414;
+    font-weight: 500;
+    border: 1px solid #a0a0a0;
+    font-variant: small-caps;
+    width: 80%;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    transform: font-size 0.1s ease-in-out;
+    padding-left: 35%;
+    padding-right: 35%;
+    cursor: pointer; }
+  #artist .follow-container {
+    height: 40px; }
+  #artist .follow:hover {
+    font-size: 27px;
+    border-color: #f6f6f6; }
+  #artist .unfollow {
+    color: #1DB954; }
+  #artist .fa {
+    float: left;
+    color: rgba(246, 246, 246, 0.7);
+    transform: all 0.75s ease-in-out;
+    padding-top: 17px;
+    padding-left: 1.5vw; }
+  #artist .fa:hover {
+    color: #f6f6f6; }
+  #artist .song-name {
+    text-align: left;
+    float: left;
+    padding-top: 17px;
+    padding-left: 1.5vw; }
+  #artist .row-image {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: left; }
+  #artist .popularity {
+    float: right;
+    padding-top: 17px;
+    padding-right: 1.5vw; }
+  #artist .popular-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; }
+  #artist .main-container {
+    text-align: left;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 33px; }
+  #artist .album-list-container {
+    display: flex;
+    flex-direction: column; }
+  #artist .single-album-container {
+    display: flex;
+    flex-direction: row; }
+    #artist .single-album-container .songs-container {
+      display: flex;
+      flex-direction: column; }
+    #artist .single-album-container .album-name {
+      font-size: 33px;
+      font-weight: bolder;
+      margin-left: 25px; }
+
+@media (min-width: 700px) {
+  #artist #profile-img {
+    height: 300px; }
+  #artist #profile-name {
+    font-size: 70px; }
+  #artist .set-width {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media (min-width: 1000px) {
+  #artist #profile-name {
+    font-size: 80px; } }
+
+/*# sourceMappingURL=maps/artistStyle.18de5684.css.map */
 
 {"version":3,"file":"../loginStyle.aad00418.css","sources":["loginStyle.scss","master.scss"],"sourcesContent":["@import 'master';\n#login {\n    position: relative;\n    height: 100vh;\n    width: 100vw;\n\n    #login-button {\n        font-family: Avenir;\n        font-weight: 900;\n        font-size: 30px;\n        background-color: $spotifyGreen;\n        border-radius: 90px;\n        padding: 10px 50px;\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        min-width: 350px;\n        transform: translate(-50%, -20%);\n        text-align: center;\n        cursor: pointer;\n    }\n\n    #login-button:hover {\n        background-color: $spotifyGreenHover;\n    }\n\n    #login-button:active {\n        background-color: $spotifyGreenActive;\n        color: $spotifyTextActive;\n    }\n\n    #text {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        min-width: 350px;\n        transform: translate(-50%, -150%);\n        line-height: 37px;\n    }\n}\n@media(min-width:700px) {\n    #login #login-button {\n        min-width: 650px;\n        font-size: 50px;\n    }\n\n    #login #text {\n        font-size: 29px;\n        font-weight: 600;\n        text-align: center;\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        min-width: 350px;\n        transform: translate(-50%, -150%);\n        line-height: 37px;\n    }\n}\n@media(min-width:1300px) {\n    #login #text {\n        font-size: 29px;\n        font-weight: 600;\n        text-align: center;\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        min-width: 350px;\n        transform: translate(-50%, -220%);\n        line-height: 37px;\n    }\n}\n","$spotifyGreen: #1DB954;\n$spotifyGreenHover: rgb(45,214,100);\n$spotifyGreenActive: rgb(33,147,71);\n$spotifyTextActive: rgb(188,199,192);\n$spotifyBlack: rgb(25,20,20);\n$spotifyWhite: rgb(246, 246, 246);\n$spotifyButtonBorder: rgb(160,160,160);\n$spotifyGridBorder : rgb(40,40,40);\n$spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);\nbody {\n    background-color: $spotifyBlack;\n    color: $spotifyWhite;\n    min-width: 453px;\n    font-family: Avenir;\n}\n\nh1 {\n    font-size: 70px;\n    font-weight: 500;\n    line-height: 60px;\n    margin: 15px;\n}\n\na {\n    text-decoration: none;\n}\n\np {\n    font-size: 27px;\n    font-weight: 600;\n    text-align: center;\n}\n\ninput {\n    color: $spotifyBlack;\n}\n\n.fa {\n    cursor: pointer;\n}\n\n.button {\n    text-align: center;\n    font-size: 30px;\n    font-weight: 900;\n    background-color: $spotifyGreen;\n    border-radius: 90px;\n    padding: 10px 50px;\n    transition: all 0.05s ease-in-out;\n}\n\n.button:hover {\n    background-color: $spotifyGreenHover;\n    font-size: 31px;\n    cursor: pointer;\n}\n\n.button:active {\n    background-color: $spotifyGreenActive;\n    color: $spotifyTextActive;\n}\n"],"mappings":"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","names":[]}
 body {

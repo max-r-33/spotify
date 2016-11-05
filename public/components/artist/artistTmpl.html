@@ -23,12 +23,12 @@
         <h3>Albums</h3>
         <div class='album-list-container' ng-repeat='album in artistInfo.albums'>
             <div class='single-album-container'>
-                <img height='200px' ng-src='{{album.images[1].url}}'>
+                <a ui-sref='album({id: album.id})'><img height='200px' ng-src='{{album.images[1].url}}'></a>
                 <span class='album-name'>{{album.name}}</span>
             </div>
-            <div class='song-row tracks' ng-repeat='title in album.tracks.items'>
+            <!-- <div class='song-row tracks' ng-repeat='title in album.tracks.items'>
               {{title.name}}
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

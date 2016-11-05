@@ -17,12 +17,110 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router']).config(function ($state
         url: '/artist/:id',
         templateUrl: '/components/artist/artistTmpl.html',
         controller: 'artistController'
+    }).state('album', {
+        url: '/album/:id',
+        templateUrl: '/components/album/albumTmpl.html',
+        controller: 'albumController'
     });
+
     $urlRouterProvider.otherwise('/');
 }).config(['$cookiesProvider', function ($cookiesProvider) {
     //makes token accessible for the whole app
     $cookiesProvider.defaults.path = '/';
 }]);
+'use strict';
+
+//filter to make iframes work with dynamic urls (for the spotify web player)
+//and for some images
+angular.module('spotifyApp').filter('trustAsResourceUrl', ['$sce', function ($sce) {
+    return function (val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);
+'use strict';
+
+angular.module('spotifyApp').controller('albumController', function ($scope, $stateParams, albumService, spotifyService) {
+  $scope.albumId = $stateParams.id;
+  $scope.getAlbum = function () {
+    albumService.getAlbumInfo($scope.albumId).then(function (response) {
+      $scope.albumInfo = response;
+    });
+  };
+
+  $scope.saveSong = function (id) {
+    spotifyService.saveTrack(id);
+  };
+
+  $scope.removeSong = function (id) {
+    spotifyService.removeTrack(id);
+  };
+
+  $scope.saveAlbum = function (id) {
+    spotifyService.saveAlbum(id);
+  };
+
+  $scope.removeAlbum = function (id) {
+    spotifyService.removeAlbum(id);
+  };
+  $scope.getAlbum();
+});
+'use strict';
+
+angular.module('spotifyApp').service('albumService', function ($http, $q, loginService) {
+  var token = loginService.getToken();
+  var albumInfo = {};
+
+  this.getAlbumInfo = function (id) {
+    //gets basic album info
+    var defer = $q.defer();
+
+    $http({
+      headers: {
+        "Authorization": 'Bearer ' + token
+      },
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/albums/' + id
+    }).then(function (res) {
+      albumInfo.artist = res.data.artists[0];
+      albumInfo.image = res.data.images[0].url;
+      albumInfo.name = res.data.name;
+      albumInfo.releaseDate = res.data.release_date;
+      albumInfo.tracks = res.data.tracks.items;
+    }).then(function () {
+      //checks if album has been saved
+      $http({
+        headers: {
+          "Authorization": 'Bearer ' + token
+        },
+        method: 'GET',
+        url: 'https://api.spotify.com/v1/me/albums/contains?ids=' + id
+      }).then(function (result) {
+        //checks if each song has been saved
+        albumInfo.alreadySaved = result.data[0];
+        for (var x = 0; x < albumInfo.tracks.length; x++) {
+          checkIfTrackSaved(albumInfo.tracks[x].id, x);
+        }
+      });
+    });
+    defer.resolve(albumInfo);
+    console.log(albumInfo);
+    return defer.promise;
+  };
+
+  //checks if track with given id has ben saved
+  var checkIfTrackSaved = function checkIfTrackSaved(id, index) {
+    var track = id;
+    $http({
+      headers: {
+        "Authorization": 'Bearer ' + token
+      },
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + track
+    }).then(function (result) {
+      albumInfo.tracks[index].alreadySaved = result.data[0];
+    });
+  };
+});
 'use strict';
 
 angular.module('spotifyApp').controller('artistController', function ($scope, $stateParams, artistService, spotifyService) {
@@ -62,6 +160,7 @@ angular.module('spotifyApp').service('artistService', function ($http, $q, login
     //gets artist info from spotify
     this.getArtistInfo = function (id) {
         //gets basic artist info
+        artistInfo.image = undefined;
         var defer = $q.defer();
         var artistID = id;
         $http({
@@ -80,7 +179,6 @@ angular.module('spotifyApp').service('artistService', function ($http, $q, login
                     artistInfo.image = result.data.images[i];
                 }
             }
-            artistInfo.image = result.data.images[1];
         }).then(function () {
             //gets if a user follows an artist
             $http({
@@ -284,14 +382,6 @@ angular.module('spotifyApp').service('loginService', function ($cookies, $http) 
 "use strict";
 'use strict';
 
-//filter to make iframes work with dynamic urls (for the spotify web player)
-angular.module('spotifyApp').filter('trustAsResourceUrl', ['$sce', function ($sce) {
-    return function (val) {
-        return $sce.trustAsResourceUrl(val);
-    };
-}]);
-'use strict';
-
 var client_id = '9307698323d44b158135c48936a25dbf';
 var redirect_uri = encodeURIComponent('http://localhost:8080/afterAuth.html');
 
@@ -407,6 +497,7 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
                     name: result.data.tracks.items[0].artists[0].name,
                     id: result.data.tracks.items[0].artists[0].id
                 };
+                //get specific stats about each song.
                 getInfo(info.id).then(function (result) {
                     info.acoutsticness = result.acoutsticness;
                     info.danceability = result.danceability;
@@ -473,6 +564,32 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
             },
             method: 'DELETE',
             url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
+        }).then(function (result) {
+            console.log(result.data);
+        });
+    };
+
+    this.saveAlbum = function (id) {
+        token = loginService.getToken();
+        $http({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            method: 'PUT',
+            url: 'https://api.spotify.com/v1/me/albums?ids=' + id
+        }).then(function (result) {
+            console.log(result.data);
+        });
+    };
+
+    this.removeAlbum = function (id) {
+        token = loginService.getToken();
+        $http({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            method: 'DELETE',
+            url: 'https://api.spotify.com/v1/me/albums?ids=' + id
         }).then(function (result) {
             console.log(result.data);
         });

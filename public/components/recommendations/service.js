@@ -75,6 +75,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
                     name: result.data.tracks.items[0].artists[0].name,
                     id: result.data.tracks.items[0].artists[0].id
                 };
+                //get specific stats about each song.
                 getInfo(info.id).then(function(result) {
                     info.acoutsticness = result.acoutsticness;
                     info.danceability = result.danceability;
@@ -142,6 +143,32 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
         },
         method: 'DELETE',
         url: 'https://api.spotify.com/v1/me/tracks?ids=' + id
+      }).then(function(result){
+        console.log(result.data);
+      });
+    };
+
+    this.saveAlbum = function(id){
+      token = loginService.getToken();
+      $http({
+        headers: {
+          'Authorization' : 'Bearer ' + token
+        },
+        method: 'PUT',
+        url: 'https://api.spotify.com/v1/me/albums?ids=' + id
+      }).then(function(result){
+        console.log(result.data);
+      });
+    };
+
+    this.removeAlbum = function(id){
+      token = loginService.getToken();
+      $http({
+        headers: {
+          'Authorization' : 'Bearer ' + token
+        },
+        method: 'DELETE',
+        url: 'https://api.spotify.com/v1/me/albums?ids=' + id
       }).then(function(result){
         console.log(result.data);
       });
