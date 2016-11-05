@@ -1,6 +1,6 @@
 angular.module('spotifyApp').controller('artistController', function($scope, $stateParams, artistService, spotifyService){
   $scope.artistId = $stateParams.id;
-
+  console.log($scope.artistId);
   //gets artist info
   artistService.getArtistInfo($scope.artistId).then(function(result){
       $scope.artistInfo = result;

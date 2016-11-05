@@ -48,7 +48,7 @@
 
     .save {
         background-color: $spotifyBlack;
-        font-weight: 500;
+        font-weight: 700;
         border: 1px solid $spotifyButtonBorder;
         font-variant: small-caps;
         font-size: 17px;
@@ -58,6 +58,7 @@
         padding-left: 15%;
         padding-right: 15%;
         cursor: pointer;
+        color:$spotifyWhite;
     }
 
     .save-container {

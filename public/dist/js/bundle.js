@@ -125,7 +125,7 @@ angular.module('spotifyApp').service('albumService', function ($http, $q, loginS
 
 angular.module('spotifyApp').controller('artistController', function ($scope, $stateParams, artistService, spotifyService) {
     $scope.artistId = $stateParams.id;
-
+    console.log($scope.artistId);
     //gets artist info
     artistService.getArtistInfo($scope.artistId).then(function (result) {
         $scope.artistInfo = result;
@@ -254,7 +254,7 @@ angular.module('spotifyApp').service('artistService', function ($http, $q, login
             method: 'PUT',
             url: 'https://api.spotify.com/v1/me/following?type=artist&ids=' + artistID
         }).then(function (res) {
-            //console.log(res);
+            console.log(res);
         });
     };
 

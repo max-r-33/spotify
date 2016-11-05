@@ -98,7 +98,7 @@ angular.module('spotifyApp').service('artistService', function($http, $q, loginS
             method: 'PUT',
             url: 'https://api.spotify.com/v1/me/following?type=artist&ids=' + artistID
         }).then(function(res) {
-            //console.log(res);
+            console.log(res);
         });
     };
 
