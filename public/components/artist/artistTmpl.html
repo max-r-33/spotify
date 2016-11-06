@@ -27,7 +27,7 @@
                 <a ui-sref='album({id: album.id})'><span class='album-name'>{{album.name}}</span></a>
             </div>
             <div class='song-row' ng-repeat='title in album.tracks.items'>
-              <span class='number'>{{ $index + 1 }}</span><span class='track-title'>{{title.name}}</span>
+                <span class='number'>{{ $index + 1 }}</span><span class='track-title'>{{title.name}}</span>
             </div>
         </div>
     </div>

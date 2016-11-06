@@ -39,87 +39,104 @@ angular.module('spotifyApp').filter('trustAsResourceUrl', ['$sce', function ($sc
 }]);
 'use strict';
 
+angular.module('spotifyApp').filter('timeFilter', function () {
+
+    return function (s) {
+        var ms = s % 1000;
+        s = (s - ms) / 1000;
+        var secs = s % 60;
+        s = (s - secs) / 60;
+        var mins = s % 60;
+        var hrs = (s - mins) / 60;
+        if (secs < 10) {
+            secs = secs + '0';
+        }
+        return mins + ':' + secs;
+    };
+});
+'use strict';
+
 angular.module('spotifyApp').controller('albumController', function ($scope, $stateParams, albumService, spotifyService) {
-  $scope.albumId = $stateParams.id;
-  $scope.getAlbum = function () {
-    albumService.getAlbumInfo($scope.albumId).then(function (response) {
-      $scope.albumInfo = response;
-    });
-  };
+    $scope.albumId = $stateParams.id;
+    $scope.getAlbum = function () {
+        albumService.getAlbumInfo($scope.albumId).then(function (response) {
+            $scope.albumInfo = response;
+        });
+    };
 
-  $scope.saveSong = function (id) {
-    spotifyService.saveTrack(id);
-  };
+    $scope.saveSong = function (id) {
+        spotifyService.saveTrack(id);
+    };
 
-  $scope.removeSong = function (id) {
-    spotifyService.removeTrack(id);
-  };
+    $scope.removeSong = function (id) {
+        spotifyService.removeTrack(id);
+    };
 
-  $scope.saveAlbum = function (id) {
-    spotifyService.saveAlbum(id);
-  };
+    $scope.saveAlbum = function (id) {
+        spotifyService.saveAlbum(id);
+    };
 
-  $scope.removeAlbum = function (id) {
-    spotifyService.removeAlbum(id);
-  };
-  $scope.getAlbum();
+    $scope.removeAlbum = function (id) {
+        spotifyService.removeAlbum(id);
+    };
+    $scope.getAlbum();
 });
 'use strict';
 
 angular.module('spotifyApp').service('albumService', function ($http, $q, loginService) {
-  var token = loginService.getToken();
-  var albumInfo = {};
+    var token = loginService.getToken();
+    var albumInfo = {};
 
-  this.getAlbumInfo = function (id) {
-    //gets basic album info
-    var defer = $q.defer();
+    this.getAlbumInfo = function (id) {
+        //gets basic album info
+        var defer = $q.defer();
 
-    $http({
-      headers: {
-        "Authorization": 'Bearer ' + token
-      },
-      method: 'GET',
-      url: 'https://api.spotify.com/v1/albums/' + id
-    }).then(function (res) {
-      albumInfo.artist = res.data.artists[0];
-      albumInfo.image = res.data.images[0].url;
-      albumInfo.name = res.data.name;
-      albumInfo.releaseDate = res.data.release_date;
-      albumInfo.tracks = res.data.tracks.items;
-    }).then(function () {
-      //checks if album has been saved
-      $http({
-        headers: {
-          "Authorization": 'Bearer ' + token
-        },
-        method: 'GET',
-        url: 'https://api.spotify.com/v1/me/albums/contains?ids=' + id
-      }).then(function (result) {
-        //checks if each song has been saved
-        albumInfo.alreadySaved = result.data[0];
-        for (var x = 0; x < albumInfo.tracks.length; x++) {
-          checkIfTrackSaved(albumInfo.tracks[x].id, x);
-        }
-      });
-    });
-    defer.resolve(albumInfo);
-    console.log(albumInfo);
-    return defer.promise;
-  };
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/albums/' + id
+        }).then(function (res) {
+            albumInfo.artist = res.data.artists[0];
+            albumInfo.image = res.data.images[0].url;
+            albumInfo.name = res.data.name;
+            albumInfo.releaseDate = res.data.release_date;
+            albumInfo.tracks = res.data.tracks.items;
+        }).then(function () {
+            //checks if album has been saved
+            $http({
+                headers: {
+                    "Authorization": 'Bearer ' + token
+                },
+                method: 'GET',
+                url: 'https://api.spotify.com/v1/me/albums/contains?ids=' + id
+            }).then(function (result) {
+                //checks if each song has been saved
+                albumInfo.alreadySaved = result.data[0];
+                for (var x = 0; x < albumInfo.tracks.length; x++) {
+                    checkIfTrackSaved(albumInfo.tracks[x].id, x);
+                }
+            });
+        });
+        defer.resolve(albumInfo);
+        console.log(albumInfo);
+        return defer.promise;
+    };
 
-  //checks if track with given id has ben saved
-  var checkIfTrackSaved = function checkIfTrackSaved(id, index) {
-    var track = id;
-    $http({
-      headers: {
-        "Authorization": 'Bearer ' + token
-      },
-      method: 'GET',
-      url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + track
-    }).then(function (result) {
-      albumInfo.tracks[index].alreadySaved = result.data[0];
-    });
-  };
+    //checks if track with given id has ben saved
+    var checkIfTrackSaved = function checkIfTrackSaved(id, index) {
+        var track = id;
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + track
+        }).then(function (result) {
+            albumInfo.tracks[index].alreadySaved = result.data[0];
+        });
+    };
 });
 'use strict';
 

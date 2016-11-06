@@ -1,24 +1,25 @@
 <div id='album'>
-  <div class='top-header'>
-    <img ng-src='{{albumInfo.image}}' height='250px' width='250px'>
-    <div class='album-info'>
-        <span class='desc'>album</span>
-        <h2>{{albumInfo.name}}</h2>
-        <div class='position-preserve'>
-            <span>By <a class='artist-link' ui-sref='artist({id: albumInfo.artist.id})'>{{ albumInfo.artist.name}}</a> &bull; {{ albumInfo.releaseDate | date}}</span>
-            <h1 ng-hide='albumInfo.alreadySaved'><div class='save-container'><a ng-click='albumInfo.alreadySaved = !albumInfo.alreadySaved; saveAlbum(albumId)' class='save'>save</a></div></h1>
-            <h1 ng-hide='!albumInfo.alreadySaved'><div class='save-container'><a ng-click='albumInfo.alreadySaved = !albumInfo.alreadySaved; removeAlbum(albumId)' class='save saved'>saved</a></div></h1>
+    <div class='top-header'>
+        <img ng-src='{{albumInfo.image}}' height='250px' width='250px'>
+        <div class='album-info'>
+            <span class='desc'>album</span>
+            <h2>{{albumInfo.name}}</h2>
+            <div class='position-preserve'>
+                <span>By <a class='artist-link' ui-sref='artist({id: albumInfo.artist.id})'>{{ albumInfo.artist.name}}</a> &bull; {{ albumInfo.releaseDate | date}}</span>
+                <h1 ng-hide='albumInfo.alreadySaved'><div class='save-container'><a ng-click='albumInfo.alreadySaved = !albumInfo.alreadySaved; saveAlbum(albumId)' class='save'>save</a></div></h1>
+                <h1 ng-hide='!albumInfo.alreadySaved'><div class='save-container'><a ng-click='albumInfo.alreadySaved = !albumInfo.alreadySaved; removeAlbum(albumId)' class='save saved'>saved</a></div></h1>
+            </div>
         </div>
     </div>
-  </div>
-  <div class='track-container'>
-      <div class='song-row' ng-repeat='track in albumInfo.tracks'>
-        <div class='track-content'>
-          <span class='number'>{{$index + 1}}</span>
-          <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i>
-          <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i>
-          <span class='song-name'>{{ track.name }}</span>
+    <div class='track-container'>
+        <div class='song-row' ng-repeat='track in albumInfo.tracks'>
+            <div class='track-content'>
+                <span class='number'>{{$index + 1}}</span>
+                <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i>
+                <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i>
+                <span class='song-name'>{{ track.name }}</span>
+                <span class='duration'>{{ track.duration_ms | timeFilter}}</span>
+            </div>
         </div>
-      </div>
-  </div>
+    </div>
 </div>

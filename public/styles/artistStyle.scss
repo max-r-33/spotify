@@ -24,6 +24,7 @@
         font-size: 28px;
         font-weight: bolder;
         line-height: 40px;
+        margin-bottom:10px;
     }
 
     #profile-img {
@@ -85,11 +86,6 @@
         color: $spotifyWhite;
     }
 
-    .song-name {
-        text-align: left;
-        float: left;
-        padding-left: 1.5vw;
-    }
 
     .row-image {
         margin: 0;
@@ -152,6 +148,7 @@
       font-size:17px;
       font-weight: 500;
     }
+
     .number{
         color:$spotifyButtonBorder;
         font-size:14px;
