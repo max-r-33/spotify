@@ -6,6 +6,7 @@ $spotifyBlack: rgb(25,20,20);
 $spotifyWhite: rgb(246, 246, 246);
 $spotifyButtonBorder: rgb(160,160,160);
 $spotifyGridBorder : rgb(40,40,40);
+$spotifyArtistCard : rgb(36,36,36);
 $spotifyAddButtonBeforeHover : rgba(246, 246, 246, .7);
 
 body {
@@ -43,12 +44,6 @@ input {
     width: 90vw;
     margin: 1vh 2vw;
 }
-
-input:focus {
-    outline-color: $spotifyGreen;
-    outline-width: 8px;
-}
-
 
 .fa {
     cursor: pointer;

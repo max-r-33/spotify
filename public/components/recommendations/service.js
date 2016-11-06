@@ -193,7 +193,7 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
     };
 
     //shortesn song titles that are too long
-    var shorten = function(str) {
+    this.shorten = function(str) {
         var arr = str.split("");
         var res = [];
         for (var i = 0; i < 22; i++) {

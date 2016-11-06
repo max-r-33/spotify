@@ -1,20 +1,43 @@
 <div id='search'>
-    <input type="text" name="name" value="" id='search-field' ng-model='term'>
-    <a id='large-button' ng-click='search(term)'>Search</a>
-
-    <h2>Albums</h2>
-    <div class='section' ng-repeat='album in albums.items'>
-        {{ album.name }}
-        <a ui-sref='album({id: album.id})'><img ng-src='{{album.images[0].url}}' height="200px" alt="" /></a>
-    </div>
-    <hr>
-    <h2>Songs</h2>
-    <div class='section' ng-repeat='song in tracks.items'>
-        {{ song.name }}
-    </div>
-    <h2>Artists</h2>
-    <div class='section' ng-repeat='artist in artists.items'>
-        {{ artist.name }}
-        <a ui-sref='artist({id: artist.id})'><img ng-src='{{artist.images[0].url}}' height="200px" alt="" /></a>
-    </div>
+  <header>
+      <div class='search-bar'>
+        <input placeholder='Search' type="text" name="name" value="" id='search-field' ng-model='term'>
+        <div class='container'><a class='button' ng-click='search(term)'>Search</a></div>
+      </div>
+  </header>
+  <div ng-hide='hideLabels'>
+      <h2>Artists</h2>
+      <div class='section'>
+        <div ng-repeat='artist in result.artists'>
+            <span class='searchCard'>
+                <a ui-sref='artist({id: artist.id})'><img ng-src='{{artist.images[0].url}}' height="250px" alt="" /></a>
+                <a ui-sref='artist({id: artist.id})'><div class='title'>{{ artist.name }}</div></a>
+            </span>
+        </div>
+      </div>
+      <h2>Albums</h2>
+      <div class='section'>
+        <div ng-repeat='album in result.albums'>
+            <span class='searchCard'>
+                <a ui-sref='album({id: album.id})'><img ng-src='{{album.images[0].url}}' height="250px" alt="" /></a>
+                <a ui-sref='album({id: album.id})'><div class='title'>{{ album.name }}</div></a>
+            </span>
+        </div>
+      </div>
+      <h2>Tracks</h2>
+      <div class='track-area'>
+        <div class='track-container'>
+            <div class='song-row' ng-repeat='track in result.tracks.items'>
+                <div class='track-content'>
+                    <span class='number'>{{$index + 1}}</span>
+                    <!-- <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i> -->
+                    <!-- <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i> -->
+                    <span class='song-name'>{{ track.name }}</span>
+                    <span ui-sref='artist({id:track.artists[0].id})' class='song-artist'>{{ track.artists[0].name }}</span>
+                    <span class='duration'>{{ track.duration_ms | timeFilter}}</span>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
 </div>

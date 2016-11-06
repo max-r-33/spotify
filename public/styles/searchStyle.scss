@@ -1,23 +1,147 @@
-@import 'loginStyle';
 @import 'master';
+@import 'artistStyle';
+@import 'albumStyle';
 
-#search{
-  #large-button{
-    position:absolute;
-    top:170px;
-    display: inline;
+#search {
+    header {
+        width: 100%;
+        text-align: center;
+
+        input {
+            width: 67vw;
+            margin: 0;
+            font-size: 30px;
+            margin-top: 50px;
+            max-width: 700px;
+        }
+
+        .button {
+            display: block;
+            max-width: 700px;
+            width: 70vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .container {
+            height: 50px;
+        }
+
+        input[type=text]:focus {
+            box-shadow: 0 0 3pt 2.5pt $spotifyGreen;
+            outline: none;
+        }
+    }
+    h2{
+      font-size:40px;
+      display: block;
+      margin-left:10vw;
+      margin-top:50px;
+    }
+
+    .section{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left:10vw;
+      margin-right:10vw;
+
+      .searchCard {
+          display: flex;
+          flex-direction: column;
+          background-color: $spotifyArtistCard;
+          border-radius:3px;
+          margin:25px;
+
+          img{
+            margin-bottom:10px;
+          }
+
+          .title{
+            font-size:20px;
+            padding-bottom:10px;
+            padding-left:10px;
+          }
+
+          a{
+            color:$spotifyWhite;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
+      }
+  }
+  .track-area{
+    width:80vw;
+    margin-left:0;
+    padding-left:0;
   }
 
-  input{
-    width:60vw;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    position:absolute;
-    top:80px;
-    display: inline;
+  .track-container{
+    margin:0;
   }
 
-  h1{
-    text-align: center;
+  .track-content{
+    margin-left:0;
+  }
+  .song-artist{
+    position: absolute;
+    left:50vw;
+  }
+  .song-artist:hover{
+    color:$spotifyWhite;
+    text-decoration: underline;
+  }
+
+  .artistLink{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    color:inherit;
+  }
+
+  .artistLink:hover{
+    text-decoration: underline;
+  }
+  .duration{
+    position: static;
+    float:right;
+    padding-right:10px;
+  }
+
+  .number{
+    position: static;
+    float:left;
+    display:none;
+  }
+  .song-name{
+    position: static;
+  }
+
+}
+
+@media(min-width:800px){
+  #search{
+    .number{
+      display:inline;
+    }
+    .track-area{
+      width:75vw;
+      margin-left:12.5vw;
+      margin-right:12.5vw;
+    }
+    duration{
+      right:vw;
+    }
+  }
+}
+@media(min-width:1000px){
+  .song-name{
+    left:300px;
+  }
+
+  .duration{
+    right:250px;
   }
 }
