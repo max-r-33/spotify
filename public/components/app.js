@@ -24,8 +24,14 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 url:'/album/:id',
                 templateUrl: '/components/album/albumTmpl.html',
                 controller:'albumController'
+            })
+
+            .state('search', {
+                url:'/search',
+                templateUrl: '/components/search/searchTmpl.html',
+                controller: 'searchController'
             });
-            
+
         $urlRouterProvider.otherwise('/');
 
     }).config(['$cookiesProvider', function($cookiesProvider) {

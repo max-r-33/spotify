@@ -1,10 +1,10 @@
 @import 'master';
-#login {
+#login, #search {
     position: relative;
     height: 100vh;
     width: 100vw;
 
-    #login-button {
+    #large-button {
         font-family: Avenir;
         font-weight: 900;
         font-size: 30px;
@@ -20,11 +20,11 @@
         cursor: pointer;
     }
 
-    #login-button:hover {
+    #large-button:hover {
         background-color: $spotifyGreenHover;
     }
 
-    #login-button:active {
+    #large-button:active {
         background-color: $spotifyGreenActive;
         color: $spotifyTextActive;
     }
@@ -39,7 +39,7 @@
     }
 }
 @media(min-width:700px) {
-    #login #login-button {
+    #login #large-button {
         min-width: 650px;
         font-size: 50px;
     }

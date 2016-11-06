@@ -1,0 +1,23 @@
+@import 'loginStyle';
+@import 'master';
+
+#search{
+  #large-button{
+    position:absolute;
+    top:170px;
+    display: inline;
+  }
+
+  input{
+    width:60vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    position:absolute;
+    top:80px;
+    display: inline;
+  }
+
+  h1{
+    text-align: center;
+  }
+}

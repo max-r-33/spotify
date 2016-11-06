@@ -34,7 +34,21 @@ p {
 
 input {
     color: $spotifyBlack;
+    background-color: $spotifyWhite;
+    border: none;
+    font-family: "Avenir";
+    font-size: 29px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 90vw;
+    margin: 1vh 2vw;
 }
+
+input:focus {
+    outline-color: $spotifyGreen;
+    outline-width: 8px;
+}
+
 
 .fa {
     cursor: pointer;

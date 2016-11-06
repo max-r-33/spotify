@@ -21,6 +21,10 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router']).config(function ($state
         url: '/album/:id',
         templateUrl: '/components/album/albumTmpl.html',
         controller: 'albumController'
+    }).state('search', {
+        url: '/search',
+        templateUrl: '/components/search/searchTmpl.html',
+        controller: 'searchController'
     });
 
     $urlRouterProvider.otherwise('/');
@@ -640,5 +644,27 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
         res.push('...');
         return res.join('');
     };
+});
+'use strict';
+
+angular.module('spotifyApp').controller('searchController', function ($scope, searchService) {
+  $scope.search = function (term) {
+    searchService.search(term).then(function (result) {
+      console.log(result);
+      $scope.albums = result.data.albums;
+      $scope.artists = result.data.artists;
+      $scope.tracks = result.data.tracks;
+    });
+  };
+});
+'use strict';
+
+angular.module('spotifyApp').service('searchService', function ($http) {
+  this.search = function (term) {
+    return $http({
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/search?q=' + term + '&type=artist,album,track'
+    });
+  };
 });
 //# sourceMappingURL=bundle.js.map

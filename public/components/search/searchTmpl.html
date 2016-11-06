@@ -1,0 +1,20 @@
+<div id='search'>
+    <input type="text" name="name" value="" id='search-field' ng-model='term'>
+    <a id='large-button' ng-click='search(term)'>Search</a>
+
+    <h2>Albums</h2>
+    <div class='section' ng-repeat='album in albums.items'>
+        {{ album.name }}
+        <a ui-sref='album({id: album.id})'><img ng-src='{{album.images[0].url}}' height="200px" alt="" /></a>
+    </div>
+    <hr>
+    <h2>Songs</h2>
+    <div class='section' ng-repeat='song in tracks.items'>
+        {{ song.name }}
+    </div>
+    <h2>Artists</h2>
+    <div class='section' ng-repeat='artist in artists.items'>
+        {{ artist.name }}
+        <a ui-sref='artist({id: artist.id})'><img ng-src='{{artist.images[0].url}}' height="200px" alt="" /></a>
+    </div>
+</div>
