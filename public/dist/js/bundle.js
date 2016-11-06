@@ -436,9 +436,11 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
 
         //gets track ID and info
         search(song, "track").then(function (songRes) {
+            console.log(songRes);
             songInfo = songRes;
             //gets artist ID and info
             search(artist, "artist").then(function (artistRes) {
+                console.log(artistRes);
                 artistInfo = artistRes;
                 //gets recommendations
                 $http({
@@ -491,6 +493,7 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
             if (type === 'artist') {
                 info.image = result.data.artists.items[0].images[0].url;
             } else {
+                info.albumId = result.data.tracks.items[0].album.id;
                 info.albumImg = result.data.tracks.items[0].album.images[0].url;
                 info.preview = result.data.tracks.items[0].preview_url;
                 info.artistInfo = {

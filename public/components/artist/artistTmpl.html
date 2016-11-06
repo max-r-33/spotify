@@ -12,23 +12,23 @@
     <div class='popular-container'>
         <h3>Popular</h3>
         <div class='song-row' ng-repeat='track in artistInfo.topTracks'>
-            <img class='row-image' ng-src='{{track.album.images[0].url}}' height='55px'>
+            <img class='row-image' ng-src='{{track.album.images[0].url}}' height='40px'>
+            <!-- <span class='number'>{{$index + 1}}</span> -->
             <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i>
             <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i>
-            <span class='song-name'>{{ track.name }}</span>
-            <span class='popularity'>{{track.popularity}}</span>
+            <span class='track-title'>{{ track.name }}<span class='popularity'>{{track.popularity}}</span></span>
         </div>
     </div>
     <div class='main-container'>
         <h3>Albums</h3>
         <div class='album-list-container' ng-repeat='album in artistInfo.albums'>
             <div class='single-album-container'>
-                <a ui-sref='album({id: album.id})'><img height='200px' ng-src='{{album.images[1].url}}'></a>
-                <span class='album-name'>{{album.name}}</span>
+                <a ui-sref='album({id: album.id})'><img height='150px' ng-src='{{album.images[1].url}}'></a>
+                <a ui-sref='album({id: album.id})'><span class='album-name'>{{album.name}}</span></a>
             </div>
-            <!-- <div class='song-row tracks' ng-repeat='title in album.tracks.items'>
-              {{title.name}}
-            </div> -->
+            <div class='song-row' ng-repeat='title in album.tracks.items'>
+              <span class='number'>{{ $index + 1 }}</span><span class='track-title'>{{title.name}}</span>
+            </div>
         </div>
     </div>
 </div>

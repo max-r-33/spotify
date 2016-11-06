@@ -2,13 +2,14 @@
 
 .song-row {
     border-top: 0.25px solid $spotifyGridBorder;
-    border-bottom: 0.25px solid $spotifyGridBorder;
     text-align: left;
     font-size: 22px;
+    cursor: default;
 }
 
-.song-row:first-child {
-    border-top: 1px solid $spotifyGridBorder;
+.song-row:last-child{
+  border-bottom:.25px solid $spotifyGridBorder;
+  margin-bottom:40px;
 }
 
 .song-row:hover {
@@ -22,7 +23,7 @@
     h3 {
         font-size: 28px;
         font-weight: bolder;
-        line-height: 60px;
+        line-height: 40px;
     }
 
     #profile-img {
@@ -73,8 +74,11 @@
         float: left;
         color: $spotifyAddButtonBeforeHover;
         transform: all 0.75s ease-in-out;
-        padding-top: 17px;
-        padding-left: 1.5vw;
+        line-height:40px;
+        font-size:17px;
+        font-weight: 500;
+        padding-right:1.5vw;
+        padding-left: 2vw;
     }
 
     .fa:hover {
@@ -84,7 +88,6 @@
     .song-name {
         text-align: left;
         float: left;
-        padding-top: 17px;
         padding-left: 1.5vw;
     }
 
@@ -97,8 +100,6 @@
 
     .popularity {
         float: right;
-        padding-top: 17px;
-        padding-right: 1.5vw;
     }
 
     .popular-container {
@@ -127,6 +128,9 @@
         display: flex;
         flex-direction: row;
 
+        img{
+          margin-bottom:20px;
+        }
         .songs-container {
             display: flex;
             flex-direction: column;
@@ -136,7 +140,24 @@
             font-size: 33px;
             font-weight: bolder;
             margin-left: 25px;
+            color:white;
         }
+
+        .album-name:hover{
+            text-decoration: underline;
+        }
+    }
+    .track-title{
+      line-height:40px;
+      font-size:17px;
+      font-weight: 500;
+    }
+    .number{
+        color:$spotifyButtonBorder;
+        font-size:14px;
+        margin-left:10px;
+        margin-right:25px;
+        margin-bottom:10px;
     }
 }
 @media(min-width:700px) {
