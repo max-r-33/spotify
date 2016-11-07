@@ -149,12 +149,18 @@
       font-weight: 500;
     }
 
-    .number{
+    .number, .time{
         color:$spotifyButtonBorder;
         font-size:14px;
         margin-left:10px;
         margin-right:25px;
         margin-bottom:10px;
+    }
+
+    .time{
+        position: absolute;
+        right:10vw;
+        margin-top:14px;
     }
 }
 @media(min-width:700px) {

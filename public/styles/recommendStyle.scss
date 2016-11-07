@@ -1,5 +1,14 @@
 @import 'master';
 
+p {
+    font-size: 22px;
+    font-weight: 100;
+    line-height: normal;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: all 0.05s ease-in-out;
+}
+
 #recommend {
     text-align: center;
 
@@ -12,20 +21,11 @@
         font-size: 11vw;
     }
 
-    p {
-        font-size: 22px;
-        font-weight: 100;
-        line-height: normal;
-        max-width: 400px;
-        margin: 0 auto;
-        transition: all 0.05s ease-in-out;
-    }
-
     input:focus {
         outline-color: $spotifyGreen;
         outline-width: 8px;
     }
-    
+
     .artist{
       text-decoration: none;
       color:$spotifyBlack;

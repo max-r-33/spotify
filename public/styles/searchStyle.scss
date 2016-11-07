@@ -1,7 +1,12 @@
 @import 'master';
 @import 'artistStyle';
+@import 'recommendStyle';
 
 #search {
+    p{
+      max-width:800px;
+      margin-bottom:15px;
+    }
     header {
         width: 100%;
         text-align: center;
