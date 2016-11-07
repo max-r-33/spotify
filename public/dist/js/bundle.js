@@ -400,6 +400,14 @@ angular.module('spotifyApp').service('loginService', function ($cookies, $http) 
         return token;
     };
 });
+'use strict';
+
+angular.module('spotifyApp').directive('navBar', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '/components/navbar/navbarTmpl.html'
+  };
+});
 "use strict";
 'use strict';
 
