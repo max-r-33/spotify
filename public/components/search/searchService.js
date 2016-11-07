@@ -1,6 +1,6 @@
-angular.module('spotifyApp').service('searchService', function($http, $q, spotifyService){
+angular.module('spotifyApp').service('searchService', function($http, $q, spotifyService, loginService){
   var searchRes = {};
-
+  var token = loginService.getToken();
   this.search = function(term){
     var defer = $q.defer();
     $http({
@@ -34,14 +34,39 @@ angular.module('spotifyApp').service('searchService', function($http, $q, spotif
 
       //checks album name length
       for(var d = 0; d < searchRes.albums.length; d++){
-        console.log(searchRes.albums[d].name);
-        if(searchRes.albums[d].name.length > 20){
+        if(searchRes.albums[d].name.length > 18){
           searchRes.albums[d].name = spotifyService.shorten(searchRes.albums[d].name);
         }
       }
+
+      //checks songs album name length
+      for(var l = 0; l < searchRes.tracks.items.length; l++){
+        if(searchRes.tracks.items[l].album.name.length > 18){
+          searchRes.tracks.items[l].album.name = spotifyService.shorten(searchRes.tracks.items[l].album.name);
+        }
+      }
+
+      //checks if song is saved
+      for (var a = 0; a < searchRes.tracks.items.length; a++) {
+          checkSong(searchRes.tracks.items[a].id, a);
+      }
+
     });
 
     defer.resolve(searchRes);
     return defer.promise;
   };
+
+  var checkSong = function(id, index) {
+      $http({
+          headers: {
+              "Authorization": 'Bearer ' + token
+          },
+          method: 'GET',
+          url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + id
+      }).then(function(res){
+          searchRes.tracks.items[index].alreadySaved = res.data[0];
+      });
+  };
+
 });

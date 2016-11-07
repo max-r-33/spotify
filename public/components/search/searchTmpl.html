@@ -1,8 +1,11 @@
 <div id='search'>
   <header>
       <div class='search-bar'>
-        <input placeholder='Search' type="text" name="name" value="" id='search-field' ng-model='term'>
-        <div class='container'><a class='button' ng-click='search(term)'>Search</a></div>
+        <!-- <h1>Search</h1> -->
+        <form ng-submit='search(term)'>
+          <input placeholder='Search' type="text" name="name" value="" id='search-field' ng-model='term'>
+        </form>
+        <!-- <div class='container'><a class='button' ng-click='search(term)'>Search</a></div> -->
       </div>
   </header>
   <div ng-hide='hideLabels'>
@@ -30,10 +33,11 @@
             <div class='song-row' ng-repeat='track in result.tracks.items'>
                 <div class='track-content'>
                     <span class='number'>{{$index + 1}}</span>
-                    <!-- <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i> -->
-                    <!-- <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i> -->
+                    <i ng-click='track.alreadySaved = !track.alreadySaved; removeSong(track.id)' ng-hide='!track.alreadySaved' class='fa fa-check'></i>
+                    <i ng-click='track.alreadySaved = !track.alreadySaved; saveSong(track.id)' ng-hide='track.alreadySaved' class='fa fa-plus'></i>
                     <span class='song-name'>{{ track.name }}</span>
                     <span ui-sref='artist({id:track.artists[0].id})' class='song-artist'>{{ track.artists[0].name }}</span>
+                    <span ui-sref='album({id:track.album.id})' class='song-album'>{{ track.album.name }}</span>
                     <span class='duration'>{{ track.duration_ms | timeFilter}}</span>
                 </div>
             </div>
