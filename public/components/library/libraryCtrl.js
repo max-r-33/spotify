@@ -1,11 +1,15 @@
 angular.module('spotifyApp').controller('libraryController', function($scope, libraryService){
     $scope.library = {};
     $scope.library.items = [];
+    $scope.offset = 0;
+
     $scope.getLib = function(){
-      libraryService.getLibrary().then(function(result){
-        $scope.library = result.data;
-        console.log($scope.library);
+      libraryService.getLibrary($scope.offset).then(function(result){
+        result.data.items.forEach(function(item){
+          $scope.library.items.push(item);
+        });
       });
+      $scope.offset += 20;
     };
     $scope.getLib();
 });

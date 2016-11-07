@@ -64,6 +64,90 @@ angular.module('spotifyApp').filter('timeFilter', function () {
 });
 'use strict';
 
+angular.module('spotifyApp').controller('albumController', function ($scope, $stateParams, albumService, spotifyService) {
+    $scope.albumId = $stateParams.id;
+    $scope.getAlbum = function () {
+        albumService.getAlbumInfo($scope.albumId).then(function (response) {
+            $scope.albumInfo = response;
+        });
+    };
+
+    $scope.saveSong = function (id) {
+        spotifyService.saveTrack(id);
+    };
+
+    $scope.removeSong = function (id) {
+        spotifyService.removeTrack(id);
+    };
+
+    $scope.saveAlbum = function (id) {
+        spotifyService.saveAlbum(id);
+    };
+
+    $scope.removeAlbum = function (id) {
+        spotifyService.removeAlbum(id);
+    };
+    $scope.getAlbum();
+});
+'use strict';
+
+angular.module('spotifyApp').service('albumService', function ($http, $q, loginService) {
+    var token = loginService.getToken();
+    var albumInfo = {};
+
+    this.getAlbumInfo = function (id) {
+        //gets basic album info
+        var defer = $q.defer();
+
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/albums/' + id
+        }).then(function (res) {
+            albumInfo.artist = res.data.artists[0];
+            albumInfo.image = res.data.images[0].url;
+            albumInfo.name = res.data.name;
+            albumInfo.releaseDate = res.data.release_date;
+            albumInfo.tracks = res.data.tracks.items;
+        }).then(function () {
+            //checks if album has been saved
+            $http({
+                headers: {
+                    "Authorization": 'Bearer ' + token
+                },
+                method: 'GET',
+                url: 'https://api.spotify.com/v1/me/albums/contains?ids=' + id
+            }).then(function (result) {
+                //checks if each song has been saved
+                albumInfo.alreadySaved = result.data[0];
+                for (var x = 0; x < albumInfo.tracks.length; x++) {
+                    checkIfTrackSaved(albumInfo.tracks[x].id, x);
+                }
+            });
+        });
+        defer.resolve(albumInfo);
+        console.log(albumInfo);
+        return defer.promise;
+    };
+
+    //checks if track with given id has ben saved
+    var checkIfTrackSaved = function checkIfTrackSaved(id, index) {
+        var track = id;
+        $http({
+            headers: {
+                "Authorization": 'Bearer ' + token
+            },
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + track
+        }).then(function (result) {
+            albumInfo.tracks[index].alreadySaved = result.data[0];
+        });
+    };
+});
+'use strict';
+
 angular.module('spotifyApp').controller('artistController', function ($scope, $stateParams, artistService, spotifyService) {
     $scope.artistId = $stateParams.id;
     console.log($scope.artistId);
@@ -243,87 +327,35 @@ angular.module('spotifyApp').service('artistService', function ($http, $q, login
 });
 'use strict';
 
-angular.module('spotifyApp').controller('albumController', function ($scope, $stateParams, albumService, spotifyService) {
-    $scope.albumId = $stateParams.id;
-    $scope.getAlbum = function () {
-        albumService.getAlbumInfo($scope.albumId).then(function (response) {
-            $scope.albumInfo = response;
-        });
-    };
+angular.module('spotifyApp').controller('libraryController', function ($scope, libraryService) {
+  $scope.library = {};
+  $scope.library.items = [];
+  $scope.offset = 0;
 
-    $scope.saveSong = function (id) {
-        spotifyService.saveTrack(id);
-    };
-
-    $scope.removeSong = function (id) {
-        spotifyService.removeTrack(id);
-    };
-
-    $scope.saveAlbum = function (id) {
-        spotifyService.saveAlbum(id);
-    };
-
-    $scope.removeAlbum = function (id) {
-        spotifyService.removeAlbum(id);
-    };
-    $scope.getAlbum();
+  $scope.getLib = function () {
+    libraryService.getLibrary($scope.offset).then(function (result) {
+      result.data.items.forEach(function (item) {
+        $scope.library.items.push(item);
+      });
+    });
+    $scope.offset += 20;
+  };
+  $scope.getLib();
 });
 'use strict';
 
-angular.module('spotifyApp').service('albumService', function ($http, $q, loginService) {
-    var token = loginService.getToken();
-    var albumInfo = {};
+angular.module('spotifyApp').service('libraryService', function ($http, spotifyService, loginService) {
+  var token = loginService.getToken();
 
-    this.getAlbumInfo = function (id) {
-        //gets basic album info
-        var defer = $q.defer();
-
-        $http({
-            headers: {
-                "Authorization": 'Bearer ' + token
-            },
-            method: 'GET',
-            url: 'https://api.spotify.com/v1/albums/' + id
-        }).then(function (res) {
-            albumInfo.artist = res.data.artists[0];
-            albumInfo.image = res.data.images[0].url;
-            albumInfo.name = res.data.name;
-            albumInfo.releaseDate = res.data.release_date;
-            albumInfo.tracks = res.data.tracks.items;
-        }).then(function () {
-            //checks if album has been saved
-            $http({
-                headers: {
-                    "Authorization": 'Bearer ' + token
-                },
-                method: 'GET',
-                url: 'https://api.spotify.com/v1/me/albums/contains?ids=' + id
-            }).then(function (result) {
-                //checks if each song has been saved
-                albumInfo.alreadySaved = result.data[0];
-                for (var x = 0; x < albumInfo.tracks.length; x++) {
-                    checkIfTrackSaved(albumInfo.tracks[x].id, x);
-                }
-            });
-        });
-        defer.resolve(albumInfo);
-        console.log(albumInfo);
-        return defer.promise;
-    };
-
-    //checks if track with given id has ben saved
-    var checkIfTrackSaved = function checkIfTrackSaved(id, index) {
-        var track = id;
-        $http({
-            headers: {
-                "Authorization": 'Bearer ' + token
-            },
-            method: 'GET',
-            url: 'https://api.spotify.com/v1/me/tracks/contains?ids=' + track
-        }).then(function (result) {
-            albumInfo.tracks[index].alreadySaved = result.data[0];
-        });
-    };
+  this.getLibrary = function (offset) {
+    return $http({
+      headers: {
+        "Authorization": 'Bearer ' + token
+      },
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/me/tracks?offset=' + offset
+    });
+  };
 });
 'use strict';
 
@@ -406,30 +438,10 @@ angular.module('spotifyApp').service('loginService', function ($cookies, $http) 
 });
 'use strict';
 
-angular.module('spotifyApp').controller('libraryController', function ($scope, libraryService) {
-  $scope.library = {};
-  $scope.library.items = [];
-  $scope.getLib = function () {
-    libraryService.getLibrary().then(function (result) {
-      $scope.library = result.data;
-      console.log($scope.library);
-    });
-  };
-  $scope.getLib();
-});
-'use strict';
-
-angular.module('spotifyApp').service('libraryService', function ($http, spotifyService, loginService) {
-  var token = loginService.getToken();
-
-  this.getLibrary = function () {
-    return $http({
-      headers: {
-        "Authorization": 'Bearer ' + token
-      },
-      method: 'GET',
-      url: 'https://api.spotify.com/v1/me/tracks'
-    });
+angular.module('spotifyApp').directive('navBar', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '/components/navbar/navbarTmpl.html'
   };
 });
 "use strict";
@@ -678,14 +690,6 @@ angular.module('spotifyApp').service('spotifyService', function ($http, $q, $coo
     };
 
     var shorten = this.shorten;
-});
-'use strict';
-
-angular.module('spotifyApp').directive('navBar', function () {
-  return {
-    restrict: 'E',
-    templateUrl: '/components/navbar/navbarTmpl.html'
-  };
 });
 'use strict';
 
