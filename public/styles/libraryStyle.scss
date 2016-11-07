@@ -8,6 +8,17 @@
   a{
     color:inherit;
   }
+
+  .fa{
+    color:$spotifyAddButtonBeforeHover;
+    margin-left:5px;
+    margin-right:5px;
+  }
+
+  .fa:hover{
+    color:$spotifyWhite;
+  }
+
   .album-name:hover, .artist:hover{
     text-decoration: underline;
   }

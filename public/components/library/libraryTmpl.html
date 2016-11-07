@@ -2,6 +2,8 @@
   <h1>Library</h1>
   <div class='lib-container'>
     <div class='song-row' ng-repeat='song in library.items'>
+        <i ng-click='song.alreadySaved = !song.alreadySaved; removeSong(song.track.id)' ng-hide='!song.alreadySaved' class='fa fa-check'></i>
+        <i ng-click='song.alreadySaved = !song.alreadySaved; saveSong(song.track.id)' ng-hide='song.alreadySaved' class='fa fa-plus'></i>
         <span class='track-title'>{{song.track.name}}</span>
         <a ui-sref='artist({id: song.track.artists[0].id})'><span class='artist'>{{ song.track.artists[0].name}}</span></a>
         <a ui-sref='album({id: song.track.album.id})'><span class='album-name'>{{song.track.album.name}}</span></a>
