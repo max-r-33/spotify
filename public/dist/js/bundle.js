@@ -439,7 +439,7 @@ angular.module('spotifyApp').controller('loginController', function ($scope, log
 'use strict';
 
 var client_id = '9307698323d44b158135c48936a25dbf';
-var redirect_uri = encodeURIComponent('http://localhost:8080/components/login/afterAuth.html');
+var redirect_uri = encodeURIComponent('https://max-r-33.github.io/spotify/public/components/login/afterAuth.html');
 
 angular.module('spotifyApp').service('loginService', function ($cookies, $http) {
     this.isLoggedIn = false;
