@@ -4,42 +4,42 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
         //search state
         $stateProvider.state('recommendations', {
                 url: '/recommendations',
-                templateUrl: '/public/components/recommendations/recommendTmpl.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/recommendations/recommendTmpl.html',
                 controller: 'recommendationController'
             })
 
             //login state
             .state('login', {
                 url: '/',
-                templateUrl: '/public/components/login/login.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/login/login.html',
                 controller: 'loginController'
             })
 
             //artist pages
             .state('artist', {
                 url:'/artist/:id',
-                templateUrl: '/public/components/artist/artistTmpl.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/artist/artistTmpl.html',
                 controller: 'artistController'
             })
 
             //album pages
             .state('album', {
                 url:'/album/:id',
-                templateUrl: '/public/components/album/albumTmpl.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/album/albumTmpl.html',
                 controller:'albumController'
             })
 
             //search page
             .state('search', {
                 url:'/search',
-                templateUrl: '/public/components/search/searchTmpl.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/search/searchTmpl.html',
                 controller: 'searchController'
             })
 
             //library page
             .state('library', {
                 url:'/library',
-                templateUrl:'/public/components/library/libraryTmpl.html',
+                templateUrl:'https://max-r-33.github.io/spotify/public/components/public/components/library/libraryTmpl.html',
                 controller:'libraryController'
             });
 
