@@ -1,0 +1,13 @@
+<div id='library'>
+  <h1>Library</h1>
+  <div class='lib-container'>
+    <div class='song-row' ng-repeat='song in library.items'>
+        <span class='track-title'>{{song.track.name}}</span>
+        <a ui-sref='artist({id: song.track.artists[0].id})'><span class='artist'>{{ song.track.artists[0].name}}</span></a>
+        <a ui-sref='album({id: song.track.album.id})'><span class='album-name'>{{song.track.album.name}}</span></a>
+        <span class='time-added'>{{ song.added_at | date}}</span>
+        <span class='time'>{{ song.track.duration_ms | timeFilter}}</span>
+    </div>
+  </div>
+  <div class='button'>More</div>
+</div>

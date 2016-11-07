@@ -30,6 +30,12 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 url:'/search',
                 templateUrl: '/components/search/searchTmpl.html',
                 controller: 'searchController'
+            })
+
+            .state('library', {
+                url:'/library',
+                templateUrl:'/components/library/libraryTmpl.html',
+                controller:'libraryController'
             });
 
         $urlRouterProvider.otherwise('/');

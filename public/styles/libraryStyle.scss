@@ -1,0 +1,79 @@
+@import 'artistStyle';
+@import 'master';
+
+#library{
+  h1{
+    text-align: center;
+  }
+  a{
+    color:inherit;
+  }
+  .album-name:hover, .artist:hover{
+    text-decoration: underline;
+  }
+
+  .lib-container{
+    margin-top:45px;
+    width:90vw;
+    margin-left:5vw;
+    margin-right:5vw;
+    font-size:13px;
+  }
+  span{
+    line-height: 40px;
+  }
+
+  .song-row{
+    height:40px;
+    text-align: left;
+  }
+  .time{
+    color:$spotifyButtonBorder;
+  }
+
+  .track-title{
+    margin-left:5px;
+  }
+
+  .time-added{
+    position:absolute;
+    right:5.25vw;
+    color:$spotifyButtonBorder;
+  }
+  .artist{
+    display: none;
+  }
+  .album-name{
+    display: none;
+  }
+  .time{
+    display: none;
+  }
+}
+@media(min-width:1000px){
+  #library{
+    .artist{
+      display:inline;
+      position: absolute;
+      left:50vw;
+    }
+  }
+}
+@media(min-width:1200px){
+  #library{
+    .artist{
+      left:33vw;
+    }
+    .album-name{
+      display: inline;
+      position: absolute;
+      left:55vw;
+    }
+    .time{
+      display: inline;
+      position:absolute;
+      right:15vw;
+      margin-right:20px;
+    }
+  }
+}

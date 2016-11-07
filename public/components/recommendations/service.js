@@ -192,6 +192,8 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
         return defer.promise;
     };
 
+
+
     //shortesn song titles that are too long
     this.shorten = function(str) {
         var arr = str.split("");
@@ -202,4 +204,6 @@ angular.module('spotifyApp').service('spotifyService', function($http, $q, $cook
         res.push('...');
         return res.join('');
     };
+
+    var shorten = this.shorten;
 });
