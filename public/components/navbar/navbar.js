@@ -1,6 +1,6 @@
 angular.module('spotifyApp').directive('navBar', function(){
   return {
     restrict:'E',
-    templateUrl:'/components/navbar/navbarTmpl.html'
+    templateUrl:'https://max-r-33.github.io/spotify/public/components/navbar/navbarTmpl.html'
   };
 });

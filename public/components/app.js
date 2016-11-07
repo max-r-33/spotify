@@ -11,7 +11,7 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
             //login state
             .state('login', {
                 url: '/',
-                templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/login/login.html',
+                templateUrl: 'https://max-r-33.github.io/spotify/public/components/login/login.html',
                 controller: 'loginController'
             })
 

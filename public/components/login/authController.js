@@ -17,7 +17,7 @@ angular.module('spotifyApp').controller('authController', function($scope, login
 
     //redirects home after 1s
     setTimeout(function() {
-        window.location = 'http://localhost:8080/#/search';
+        window.location = 'https://max-r-33.github.io/spotify/public/#/search';
     }, 1000);
 
 });

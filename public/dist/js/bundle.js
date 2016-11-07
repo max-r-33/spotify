@@ -5,42 +5,42 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router']).config(function ($state
     //search state
     $stateProvider.state('recommendations', {
         url: '/recommendations',
-        templateUrl: '/components/recommendations/recommendTmpl.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/recommendations/recommendTmpl.html',
         controller: 'recommendationController'
     })
 
     //login state
     .state('login', {
         url: '/',
-        templateUrl: '/components/login/login.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/login/login.html',
         controller: 'loginController'
     })
 
     //artist pages
     .state('artist', {
         url: '/artist/:id',
-        templateUrl: '/components/artist/artistTmpl.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/artist/artistTmpl.html',
         controller: 'artistController'
     })
 
     //album pages
     .state('album', {
         url: '/album/:id',
-        templateUrl: '/components/album/albumTmpl.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/album/albumTmpl.html',
         controller: 'albumController'
     })
 
     //search page
     .state('search', {
         url: '/search',
-        templateUrl: '/components/search/searchTmpl.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/search/searchTmpl.html',
         controller: 'searchController'
     })
 
     //library page
     .state('library', {
         url: '/library',
-        templateUrl: '/components/library/libraryTmpl.html',
+        templateUrl: 'https://max-r-33.github.io/spotify/public/components/public/components/library/libraryTmpl.html',
         controller: 'libraryController'
     });
 
@@ -417,13 +417,13 @@ angular.module('spotifyApp').controller('authController', function ($scope, logi
 
     //redirects home after 1s
     setTimeout(function () {
-        window.location = 'http://localhost:8080/#/search';
+        window.location = 'https://max-r-33.github.io/spotify/public/#/search';
     }, 1000);
 });
 'use strict';
 
 angular.module('spotifyApp').controller('loginController', function ($scope, loginService) {
-    var redirect_uri = 'http://localhost:8080/components/login/afterAuth.html';
+    var redirect_uri = 'https://max-r-33.github.io/spotify/public/components/login/afterAuth.html';
     //redirects to spotify permission request
     $scope.authorize = function () {
         loginService.authorize().then(function (resp) {
@@ -433,7 +433,7 @@ angular.module('spotifyApp').controller('loginController', function ($scope, log
     loginService.getToken();
     $scope.isLoggedIn = loginService.isLoggedIn;
     if ($scope.isLoggedIn) {
-        window.location = "http://localhost:8080/#/recommendations";
+        window.location = "https://max-r-33.github.io/spotify/public/#/recommendations";
     }
 });
 'use strict';
@@ -480,7 +480,7 @@ angular.module('spotifyApp').service('loginService', function ($cookies, $http) 
 angular.module('spotifyApp').directive('navBar', function () {
   return {
     restrict: 'E',
-    templateUrl: '/components/navbar/navbarTmpl.html'
+    templateUrl: 'https://max-r-33.github.io/spotify/public/components/navbar/navbarTmpl.html'
   };
 });
 "use strict";
