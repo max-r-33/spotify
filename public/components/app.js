@@ -7,6 +7,7 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 templateUrl: '/components/recommendations/recommendTmpl.html',
                 controller: 'recommendationController'
             })
+
             //login state
             .state('login', {
                 url: '/',
@@ -14,24 +15,28 @@ angular.module('spotifyApp', ['ngCookies', 'ui.router'])
                 controller: 'loginController'
             })
 
+            //artist pages
             .state('artist', {
                 url:'/artist/:id',
                 templateUrl: '/components/artist/artistTmpl.html',
                 controller: 'artistController'
             })
 
+            //album pages
             .state('album', {
                 url:'/album/:id',
                 templateUrl: '/components/album/albumTmpl.html',
                 controller:'albumController'
             })
 
+            //search page
             .state('search', {
                 url:'/search',
                 templateUrl: '/components/search/searchTmpl.html',
                 controller: 'searchController'
             })
 
+            //library page
             .state('library', {
                 url:'/library',
                 templateUrl:'/components/library/libraryTmpl.html',
